@@ -3,26 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instituto EduTec</title>
+  <title>IES La Cocha</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header>
-    <h1>Instituto EduTec</h1>
+    <h1>Instituto de Enseñanza Superior La Cocha</h1>
+    <img src="assets/img/LOGOIES.png">
     <p>Formando el futuro hoy</p>
   </header>
+<section class="menu">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">IES</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Iniciar Sesion</a>
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Gestion Academica
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Pre-Inscripcion</a></li>
+            <li><a class="dropdown-item" href="#">Formularios</a></li>
+            <li><a class="dropdown-item" href="#">Fechas Examenes </a></li>
+          </ul>
+          <li class="nav-item">
+          <a class="nav-link" href="http://titulos.educaciontuc.gov.ar:88/consultaonline.aspx"target="blank">Consulta de Titulo</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Carreras
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profesor/a de Educación Secundaria en Historia</a></li>
+            <li><a class="dropdown-item" href="#">Matematicas</a></li>
+            <li><a class="dropdown-item" href="#">Gestion AGROPECUARIA</a></li>
+            <li><a class="dropdown-item" href="#">Software</a></li>
+            <li><a class="dropdown-item" href="#">Agroindustria</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</section>
 
-  <nav>
-    <a href="#oferta">Carreras</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#contacto">Gestiones Academicas    </a>
-  </nav>
-
-  <section class="hero">
-    <h1>Estudiá con los mejores</h1>
-    <p>Carreras técnicas con rápida salida laboral</p>
+  <section class="Carrusel">
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3000">
+      <img src="assets/img/carrusel1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="assets/img/carrusel2.png"class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="assets/img/carrusel1.jpg" class="d-block w-100" alt="...">
+      
+    </div>
+  </div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+ <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
   </section>
 
   <section class="section" id="oferta">
@@ -39,16 +100,20 @@
     <p>Somos un instituto con más de 20 años formando profesionales en tecnología. Contamos con docentes especializados y convenios con empresas del sector.</p>
   </section>
 
-  <section class="section" id="contacto">
-    <h2>Contacto</h2>
+  <footer class="footer">
+     <section>
+    <h2>Informacion de contacto</h2>
     <p>Email: info@edutec.edu</p>
     <p>Teléfono: (011) 1234-5678</p>
     <p>Dirección: Calle Futura 123, Buenos Aires</p>
+    <img src="assets/img/logo_infod.png">
+    <img src="assets/img/logo_ministerio.png">
+ 
   </section>
 
-  <footer class="footer">
-    &copy; 2024 Instituto EduTec. Todos los derechos reservados.
+    &copy; 2025 IES La Cocha. Todos los derechos reservados.
   </footer>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
