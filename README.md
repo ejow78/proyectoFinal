@@ -25,8 +25,7 @@ proyectoFinal/
 ├── login.html          # Página de inicio de sesión
 ├── register.html       # Página de registro
 ├── script.js           # Lógica en JavaScript
-├── styles.css          # Estilos personalizadosa
-└── .git/               # Repositorio Git (seguimiento de cambios)
+└── styles.css          # Estilos personalizadosa
 ```
 
 ## Páginas del Sitio
