@@ -11,10 +11,10 @@ Este proyecto forma parte de la materia Laboratorio de Programación. Su objetiv
 
 ## Tecnologías Utilizadas
 
-- **HTML5**: para la estructura de las páginas.
-- **CSS3**: para los estilos visuales.
-- **Bootstrap 5**: para diseño responsive y componentes modernos.
-- **JavaScript (JS)**: para validar formularios y agregar interactividad básica.
+- HTML5: para la estructura de las páginas.
+- CSS3: para los estilos visuales.
+- Bootstrap 5: para diseño responsive y componentes modernos.
+- JavaScript: para validar formularios y agregar interactividad básica.
 
 ## Estructura de Archivos
 
@@ -31,10 +31,10 @@ proyectoFinal/
 
 ## Páginas del Sitio
 
-- **index.html**: Página de inicio con bienvenida institucional.
-- **contacto.html**: Formulario de contacto que permite enviar mensajes.
-- **login.html**: Formulario de inicio de sesión con validación básica.
-- **register.html**: Registro de nuevos usuarios con validación de campos.
+- index.html: Página de inicio con bienvenida institucional.
+- contacto.html: Formulario de contacto que permite enviar mensajes.
+- login.html: Formulario de inicio de sesión con validación básica.
+- register.html: Registro de nuevos usuarios con validación de campos.
 
 ## Funcionalidades JavaScript
 
@@ -56,10 +56,10 @@ El archivo `script.js` incluye:
 3. Navegar entre páginas a través del menú principal.
 4. Probar formularios de login, registro y contacto.
 
-> Nota: Este proyecto no utiliza backend ni base de datos. Las funcionalidades son de demostración con validación local (frontend).
+> Nota: Este proyecto por el momento no utiliza backend ni base de datos. Las funcionalidades son de demostración con validación local.
 
 ## Autores
 
-- **Nombres:** Diaz Santiago - Ortiz Edgar Javier
-- **Materia:** Laboratorio de Programación
-- **Año:** 2025
+- Nombres: Diaz Santiago y Ortiz Edgar Javier
+- Materia: Laboratorio de Programación
+- Año: 2025
