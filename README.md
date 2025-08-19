@@ -5,6 +5,7 @@ Este proyecto forma parte de la materia Laboratorio de Programación. Su objetiv
 ## Objetivos del Proyecto
 
 - Modernizar el diseño visual del sitio institucional.
+- Modernizar la forma de inscripcion y mejorar el acceso de los docentes administrativos a las inscripciones de alumnos de manera no presencial.
 - Mejorar la experiencia de usuario (UX).
 - Implementar un diseño responsive que se adapte a dispositivos móviles.
 - Agregar funcionalidades básicas como formularios de contacto, login y registro.
