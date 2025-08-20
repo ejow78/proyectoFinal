@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IES La Cocha</title>
+    <title>Registrarse - IES La Cocha</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
             <div class="nav-content">
                 <ul class="nav-menu" id="navMenu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link active">Inicio</a>
+                        <a href="index.html" class="nav-link">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link">
@@ -70,82 +70,55 @@
         </div>
     </nav>
 
-    <!-- Hero Carousel -->
-    <section class="simple-hero">
-        <div class="hero-background">
-            <img src="assets/img/hero-bg-Bg8TrwLN.jpg" alt="Estudiantes estudiando" class="hero-image">
-            <div class="hero-overlay"></div>
-        </div>
+    <!-- Form Registro -->
+    <main class="auth-main">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Pre-inscripciones 2025</h1>
-                <p class="hero-subtitle">
-                    Están abiertas las pre-inscripciones para las ofertas del Instituto de Enseñanza Superior La Cocha
-                </p>
-                <a href="#" class="hero-button" id="heroButton">
-                    Pre-inscribirme
-                </a>
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Crear Cuenta</h2>
+                        <p>Regístrate para acceder al sistema</p>
+                    </div>
+                    <form class="auth-form" id="registerForm">
+                        <div class="form-group">
+                            <label for="username">Nombre de Usuario</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de Usuario" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <div class="input-group">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required>
+                                    <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirmar Contraseña</label>
+                                <div class="input-group">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeti la contraseña" required>
+                                    <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-auth">
+                            Crear Cuenta
+                        </button>
+                    </form>
+                    <div class="auth-footer">
+                        <p>¿Ya tenes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contenido Body -->
-    <main>
-        <!-- Oferta academica -->
-        <section class="section programs">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Nuestra Oferta Académica</h2>
-                    <p>Carreras diseñadas para el mundo laboral actual</p>
-                </div>
-                <div class="programs-grid">
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Tecnicatura en Desarrollo de Software</h3>
-                        <p>Desarrolla aplicaciones web y móviles con las tecnologías más demandadas del mercado.</p>
-                        <a href="#" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h3>Profesorado en Matemáticas</h3>
-                        <p>Especialízate en la enseñanza de matemáticas con un enfoque práctico y actualizado.</p>
-                        <a href="#" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Profesorado en Historia</h3>
-                        <p>Especialízate en la enseñanza de la historia con un enfoque práctico y actualizado.</p>
-                        <a href="#" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sobre Nosotros -->
-        <section class="section about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <div class="section-header">
-                            <h2>Sobre Nosotros</h2>
-                            <p>Instituto de Enseñanza Superior La Cocha</p>
-                        </div>
-                        <p class="about-description">
-                            Este Instituto Superior de Formación Docente forma parte del sistema de educación pública de gestión estatal. <br>A través de este sitio en Internet, nuestro Instituto podrá comunicar novedades, acercar información, compartir experiencias y brindar apoyo y asesoramiento a alumnos, docentes e interesados en formar parte de esta comunidad educativa. <br>Junto con varios cientos de Institutos, integramos la Red Virtual de Institutos Superiores de Formación Docente coordinada por el INFD (Instituto Nacional de Formación Docente) dependiente del Ministerio de Educación de la Nación Argentina.
-                        </p>
-                    </div>
-                    <div class="about-image">
-                        <img src="/placeholder.svg?height=400&width=500" alt="Instituto La Cocha">
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -191,7 +164,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; Diaz Santiago Ortiz Edgar. Todos los derechos reservados.</p>
+                <p>&copy; 2025 IES La Cocha. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
