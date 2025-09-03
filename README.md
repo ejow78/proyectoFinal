@@ -63,3 +63,5 @@ El archivo `script.js` incluye:
 - Nombres: Diaz Santiago y Ortiz Edgar Javier
 - Materia: Laboratorio de Programación
 - Año: 2025
+
+- https://www.figma.com/board/NPySSxGUvHTMJxHAcOG4Z6/Website-Wireframing-Template-%7C--The-Conference-Room--Community-?node-id=0-1&t=KuMvttBJ3rgUzDUd-1
