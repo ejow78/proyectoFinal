@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE php>
+<php lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,66 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <img src="assets/img/LOGOIES.png" alt="Logo IES" class="header-logo">
-                <div class="header-text">
-                    <h1>Instituto de Enseñanza Superior La Cocha</h1>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navegacion -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active">Inicio</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">
-                            Gestión Académica <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-link">Pre-Inscripción</a></li>
-                            <li><a href="#" class="dropdown-link">Formularios</a></li>
-                            <li><a href="#" class="dropdown-link">Fechas Exámenes</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">
-                            Carreras <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-link">Profesorado de Educación Secundaria en Historia</a></li>
-                            <li><a href="#" class="dropdown-link">Profesorado de Educación Secundaria en Matemáticas</a></li>
-                            <li><a href="#" class="dropdown-link">Técnico Superior en Gestión de Producción Agropecuaria</a></li>
-                            <li><a href="#" class="dropdown-link">Técnico Superior en Agroindustria de los Alimentos</a></li>
-                            <li><a href="carreras/desarrollo-software.html" class="dropdown-link">Técnico Superior en Desarrollo de Software</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="http://titulos.educaciontuc.gov.ar:88/consultaonline.aspx" target="_blank" class="nav-link">Consulta de Título</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contacto.html" class="nav-link">Contacto</a>
-                    </li>
-                </ul>
-                <a href="login.html" class="btn-login">
-                    Iniciar Sesión
-                </a>
-                <button class="mobile-toggle" id="mobileToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <?php include 'header.php'; ?>
 
     <!-- Hero Carousel -->
     <section class="hero">
@@ -119,7 +60,7 @@
                         </div>
                         <h3>Tecnicatura en Desarrollo de Software</h3>
                         <p>Desarrolla aplicaciones web y móviles con las tecnologías más demandadas del mercado.</p>
-                        <a href="#" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        <a href="carreras/desarrollo-software.php" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="program-card">
                         <div class="program-icon">
@@ -135,7 +76,7 @@
                         </div>
                         <h3>Profesorado en Historia</h3>
                         <p>Especialízate en la enseñanza de la historia con un enfoque práctico y actualizado.</p>
-                        <a href="#" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        <a href="carreras/profesorado-historia.php" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -186,10 +127,10 @@
                 <div class="footer-section">
                     <h3>Enlaces Rápidos</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.php">Inicio</a></li>
                         <li><a href="#">Carreras</a></li>
                         <li><a href="#">Admisiones</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -212,4 +153,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</php>
