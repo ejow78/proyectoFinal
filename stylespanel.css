@@ -31,118 +31,6 @@ body {
   line-height: 1.6;
 }
 
-/* ===================================
-   PÁGINA DE LOGIN
-   =================================== */
-
-.login-body {
-  background: linear-gradient(135deg, #e0e7ff 0%, #f0f9ff 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.login-container {
-  max-width: 1100px;
-  width: 100%;
-}
-
-.login-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.login-header h1 {
-  color: var(--color-principal);
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.login-header p {
-  color: var(--color-texto-claro);
-  font-size: 1.1rem;
-}
-
-.forms-row {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.form-column {
-  flex: 1;
-  min-width: 300px;
-}
-
-.form-card {
-  background: var(--fondo-blanco);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  height: 100%;
-}
-
-.form-card-header {
-  background: var(--color-principal);
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.form-card-header h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.form-card-body {
-  padding: 2rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--color-texto);
-  font-weight: 500;
-}
-
-.form-control {
-  width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--color-principal);
-  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
-}
-
-/* Captcha */
-.captcha-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.captcha-image {
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  background: #f9fafb;
-  display: block;
-}
-
 /* Botones */
 .btn {
   padding: 0.75rem 1.5rem;
@@ -444,5 +332,121 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-}/* ===================================
-   SISTEMA DE INSCRIPCIONES - ESTILOS   
+}
+
+/* ===================================
+   estilos panel
+   =================================== */
+.table-container {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .table {
+            width: 150%;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        .table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            padding: 0.75rem 0.5rem;
+            white-space: nowrap;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        
+        .table td {
+            padding: 0.75rem 0.5rem;
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .btn-sm {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.85rem;
+            margin: 0.1rem;
+            white-space: nowrap;
+        }
+        
+        .form-control, .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+        }
+        
+        .btn-warning {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+        }
+        
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+        
+        .btn-light {
+            background-color: #f8f9fa;
+            color: #000;
+            border: 1px solid #ddd;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            gap: 0.5rem;
+        }
+        
+        .page-item .page-link {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        
+        .page-item.disabled .page-link {
+            color: #6c757d;
+            background-color: #f8f9fa;
+        }

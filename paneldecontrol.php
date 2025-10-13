@@ -248,7 +248,6 @@ $carreras_nombres = [
             <?php endif; ?>
         </div>
 
-         Formulario de filtros mejorado 
         <div class="table-container mb-4">
             <form method="GET" action="" class="d-flex" style="gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
                 <input type="text" name="search" class="form-control" style="flex: 2; min-width: 200px;"
@@ -286,7 +285,6 @@ $carreras_nombres = [
         <div class="table-container">
             <p class="text-muted">Mostrando <?php echo $result->num_rows; ?> de <?php echo $total_items; ?> inscripciones</p>
             
-             Tabla responsive sin scroll horizontal excesivo 
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -312,12 +310,10 @@ $carreras_nombres = [
                                     <td><?php echo htmlspecialchars($row['nombre'] . ' ' . $row['apellido']); ?></td>
                                     <td><?php echo htmlspecialchars($row['dni']); ?></td>
                                     <td><?php echo htmlspecialchars($row['genero']); ?></td>
-                                     Mostrar nombre completo de localidad 
                                     <td><?php echo htmlspecialchars(isset($localidades_nombres[$row['localidad']]) ? $localidades_nombres[$row['localidad']] : $row['localidad']); ?></td>
                                     <td><?php echo htmlspecialchars($row['direccion']); ?></td>
                                     <td style="text-transform: lowercase;"><?php echo htmlspecialchars($row['email']); ?></td>
                                     <td><?php echo htmlspecialchars($row['telefono']); ?></td>
-                                     Mostrar nombre completo de carrera 
                                     <td><?php echo htmlspecialchars(isset($carreras_nombres[$row['carrera']]) ? $carreras_nombres[$row['carrera']] : $row['carrera']); ?></td>
                                     <td><?php echo date('d/m/Y H:i', strtotime($row['creadoa'])); ?></td>
                                     <td style="white-space: nowrap;">
