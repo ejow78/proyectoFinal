@@ -98,132 +98,16 @@ $carreras_nombres = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IES La Cocha</title>
+    <title>Panel de Control - IES La Cocha</title>
     <link rel="stylesheet" href="stylespanel.css">
-    <style>
-        /* Estilos adicionales para mejorar la visualización */
-        .table-container {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .table {
-            width: 100%;
-            margin-bottom: 0;
-            font-size: 0.9rem;
-        }
-        
-        .table th {
-            background-color: #f8f9fa;
-            font-weight: 600;
-            padding: 0.75rem 0.5rem;
-            white-space: nowrap;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
-        
-        .table td {
-            padding: 0.75rem 0.5rem;
-            vertical-align: middle;
-            text-transform: uppercase;
-        }
-        
-        .table-responsive {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .btn-sm {
-            padding: 0.25rem 0.75rem;
-            font-size: 0.85rem;
-            margin: 0.1rem;
-            white-space: nowrap;
-        }
-        
-        .form-control, .btn {
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-        
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
-            border: none;
-        }
-        
-        .btn-secondary {
-            background-color: #6c757d;
-            color: white;
-            border: none;
-        }
-        
-        .btn-warning {
-            background-color: #ffc107;
-            color: #000;
-            border: none;
-        }
-        
-        .btn-danger {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-        }
-        
-        .btn-light {
-            background-color: #f8f9fa;
-            color: #000;
-            border: 1px solid #ddd;
-        }
-        
-        .alert {
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-        
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .alert-danger {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
-        .pagination {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            gap: 0.5rem;
-        }
-        
-        .page-item .page-link {
-            padding: 0.5rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #007bff;
-        }
-        
-        .page-item.disabled .page-link {
-            color: #6c757d;
-            background-color: #f8f9fa;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar-custom">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h3 class="navbar-title">Dashboard</h3>
-                    <small class="navbar-subtitle">IES La Cocha</small>
+                    <h3 class="navbar-title">IES La Cocha</h3>
+                    <small class="navbar-subtitle">Panel de Control</small>
                 </div>
                 <div class="navbar-user">
                     <span>Bienvenido, <strong><?php echo htmlspecialchars($usuario); ?></strong></span>
@@ -248,6 +132,7 @@ $carreras_nombres = [
             <?php endif; ?>
         </div>
 
+        <!-- Formulario de filtros mejorado -->
         <div class="table-container mb-4">
             <form method="GET" action="" class="d-flex" style="gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
                 <input type="text" name="search" class="form-control" style="flex: 2; min-width: 200px;"
@@ -285,6 +170,7 @@ $carreras_nombres = [
         <div class="table-container">
             <p class="text-muted">Mostrando <?php echo $result->num_rows; ?> de <?php echo $total_items; ?> inscripciones</p>
             
+            <!-- Tabla responsive sin scroll horizontal excesivo -->
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -310,10 +196,12 @@ $carreras_nombres = [
                                     <td><?php echo htmlspecialchars($row['nombre'] . ' ' . $row['apellido']); ?></td>
                                     <td><?php echo htmlspecialchars($row['dni']); ?></td>
                                     <td><?php echo htmlspecialchars($row['genero']); ?></td>
+                                    <!-- Mostrar nombre completo de localidad -->
                                     <td><?php echo htmlspecialchars(isset($localidades_nombres[$row['localidad']]) ? $localidades_nombres[$row['localidad']] : $row['localidad']); ?></td>
                                     <td><?php echo htmlspecialchars($row['direccion']); ?></td>
                                     <td style="text-transform: lowercase;"><?php echo htmlspecialchars($row['email']); ?></td>
                                     <td><?php echo htmlspecialchars($row['telefono']); ?></td>
+                                    <!-- Mostrar nombre completo de carrera -->
                                     <td><?php echo htmlspecialchars(isset($carreras_nombres[$row['carrera']]) ? $carreras_nombres[$row['carrera']] : $row['carrera']); ?></td>
                                     <td><?php echo date('d/m/Y H:i', strtotime($row['creadoa'])); ?></td>
                                     <td style="white-space: nowrap;">
