@@ -100,6 +100,7 @@ $carreras_nombres = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Control - IES La Cocha</title>
     <link rel="stylesheet" href="stylespanel.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar-custom">
@@ -252,7 +253,7 @@ $carreras_nombres = [
             <?php endif; ?>
         </div>
     </div>
-
+<?php include 'footer.php'; ?>
     <script>
         function confirmarEliminar(id, nombre) {
             if (confirm('¿Estás seguro de que deseas eliminar la inscripción de "' + nombre + '"?')) {
