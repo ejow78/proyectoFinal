@@ -72,9 +72,9 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
               <label for="localidad">Localidad *</label>
               <select id="localidad" name="localidad" required>
                 <option value="" disabled selected hidden>Selecciona una opción</option>
-                <option value="alberdi">Alberdi</option>
+                <option value="alberdi">Juan Bautista Alberdi</option>
                 <option value="aguilares">Aguilares</option>
-                <option value="concepcion">Concepcion</option>
+                <option value="concepcion">Concepción</option>
                 <option value="graneros">Graneros</option>
                 <option value="lacocha">La Cocha</option>
                 <option value="lamadrid">La Madrid</option>
@@ -111,7 +111,7 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
               </select>
             </div>
 
-            <h5>Presentar de manera fisica Fotocopia de DNI (ambos lados) y Fotocopia Titulo / Constancia de titulo en tramite</h5>
+            <h5>*Presentar de manera fisica Fotocopia de DNI (ambos lados) y Fotocopia Titulo / Constancia de titulo en tramite*</h5>
 
           <button type="submit" class="btn-submit">Enviar Mensaje</button>
         </form>

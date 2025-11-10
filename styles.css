@@ -418,6 +418,9 @@ body {
   border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .program-card::before {
@@ -472,6 +475,7 @@ body {
   align-items: center;
   gap: 8px;
   transition: var(--transition);
+  margin-top: auto;
 }
 
 .program-link:hover {

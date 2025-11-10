@@ -21,7 +21,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
         <div class="nav-content">
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link active">Inicio</a>
+                    <a href="../index.php" class="nav-link active">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link">
@@ -34,15 +34,15 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">
+                    <a href="carreras.php" class="nav-link">
                         Carreras <i class="fas fa-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" class="dropdown-link">Profesorado de Educación Secundaria en Historia</a></li>
-                        <li><a href="#" class="dropdown-link">Profesorado de Educación Secundaria en Matemáticas</a></li>
-                        <li><a href="#" class="dropdown-link">Técnico Superior en Gestión de Producción Agropecuaria</a></li>
-                        <li><a href="#" class="dropdown-link">Técnico Superior en Agroindustria de los Alimentos</a></li>
-                        <li><a href="carreras/desarrollo-software.php" class="dropdown-link">Técnico Superior en Desarrollo de Software</a></li>
+                        <li><a href="../carreras/profesorado-historia.php" class="dropdown-link">Profesorado de Educación Secundaria en Historia</a></li>
+                        <li><a href="../carreras/profesorado-matematica.php" class="dropdown-link">Profesorado de Educación Secundaria en Matemáticas</a></li>
+                        <li><a href="../carreras/tecnicatura-agropecuaria.php" class="dropdown-link">Técnico Superior en Gestión de Producción Agropecuaria</a></li>
+                        <li><a href="../carreras/tecnicatura-agroindustria-alimentos.php" class="dropdown-link">Técnico Superior en Agroindustria de los Alimentos</a></li>
+                        <li><a href="../carreras/tecnicatura-software.php" class="dropdown-link">Técnico Superior en Desarrollo de Software</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

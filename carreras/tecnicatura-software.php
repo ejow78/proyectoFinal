@@ -3,73 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnicatura en Desarrollo de Software - IES La Cocha</title>
+    <title>Tecnicatura en Desarrollo de Software</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <img src="../assets/img/LOGOIES.png" alt="Logo IES" class="header-logo">
-                <div class="header-text">
-                    <h1>Instituto de Enseñanza Superior La Cocha</h1>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item">
-                        <a href="../index.html" class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">
-                            Gestión Académica <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-link">Pre-Inscripción</a></li>
-                            <li><a href="#" class="dropdown-link">Formularios</a></li>
-                            <li><a href="#" class="dropdown-link">Fechas Exámenes</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link active">
-                            Carreras <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-link">Profesor/a de Educación Secundaria en Historia</a></li>
-                            <li><a href="#" class="dropdown-link">Matemáticas</a></li>
-                            <li><a href="#" class="dropdown-link">Gestión Agropecuaria</a></li>
-                            <li><a href="../carreras/desarrollo-software.html" class="dropdown-link">Software</a></li>
-                            <li><a href="#" class="dropdown-link">Agroindustria</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="http://titulos.educaciontuc.gov.ar:88/consultaonline.aspx" target="_blank" class="nav-link">Consulta de Título</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../contacto.html" class="nav-link">Contacto</a>
-                    </li>
-                </ul>
-                <a href="../login.html" class="btn-login">
-                    Iniciar Sesión
-                </a>
-                <button class="mobile-toggle" id="mobileToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
+   <?php include '../header.php'; ?>   
     <!-- Main Content -->
     <main>
         <!-- mini menu -->
@@ -78,9 +18,9 @@
                 <nav class="breadcrumb">
                     <a href="../index.html" class="breadcrumb-link">Inicio</a>
                     <span class="breadcrumb-separator">></span>
-                    <a href="#" class="breadcrumb-link">Carreras</a>
+                    <a href="../carreras.php" class="breadcrumb-link">Carreras</a>
                     <span class="breadcrumb-separator">></span>
-                    <span class="breadcrumb-current">Tecnicatura en Desarrollo de Software</span>
+                    <span class="breadcrumb-current">Profesorado en Historia</span>
                 </nav>
             </div>
         </section>
@@ -90,7 +30,7 @@
             <div class="container">
                 <div class="career-header-content">
                     <div class="career-info">
-                        <h1 class="career-title">Tecnicatura Superior en Desarrollo de Software</h1>
+                        <h1 class="career-title">Profesorado en Historia</h1>
                         <p class="career-description">
                             La Tecnicatura en Desarrollo de Software brinda una formación práctica y actualizada en el área de las tecnologías de la información. Los estudiantes se introducen en la programación, el diseño de aplicaciones y el uso de herramientas digitales que responden a las demandas del mercado laboral. El objetivo es formar técnicos capaces de adaptarse a distintos entornos de trabajo, ya sea en empresas, instituciones o emprendimientos propios, contribuyendo al crecimiento del sector tecnológico y digital.
                         </p>
@@ -133,15 +73,14 @@
                                 </button>
                                 <div class="curriculum-content" id="año1">
                                     <ul class="subjects-list">
-                                        <li>Ciudadania y Espacio Público</li>
-                                        <li>Introduccion a la Informática</li>
-                                        <li>Introduccion a Redes</li>
-                                        <li>Base de Datos I</li>
-                                        <li>Matemática I</li>
-                                        <li>Programacion I</li>
-                                        <li>Inglés Técnico I</li>
-                                        <li>Estructura de Datos y Algoritmos</li>
-                                        <li>Taller de Programación I</li>
+                                        <li>Pedagogía</li>
+                                        <li>Didactica General</li>
+                                        <li>Psicología Educacional</li>
+                                        <li>Lectura Escritura y Oralidad</li>
+                                        <li>Historia Mundial I</li>
+                                        <li>Problema de Historia y Filosofia</li>
+                                        <li>Prehistoria y Arqueologia</li>
+                                        <li>Practicas Profesional</li>
                                     </ul>
                                 </div>
                             </div>
@@ -174,6 +113,22 @@
                                         <li>asdasd</li>
                                         <li>asdasd</li>
                                         <li>asdasd</li>
+                                    </ul>
+                                </div>
+                            </div>
+                              <div class="curriculum-year">
+                                <button class="curriculum-toggle" onclick="toggleCurriculum('año4')">
+                                    <span>Cuarto Año</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="curriculum-content" id="año4">
+                                    <ul class="subjects-list">
+                                        <li>Programación II</li>
+                                        <li>Base de Datos II</li>
+                                        <li>Taller Programacion II</li>
+                                        <li>Inglés Técnico II</li>
+                                        <li>Matematica II</li>
+                                        <li>Estadística Aplicada</li>
                                     </ul>
                                 </div>
                             </div>
