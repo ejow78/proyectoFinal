@@ -1,6 +1,6 @@
 <?php
 
-include 'conect.php';
+include 'includes/conect.php';
 
 $nombre = $_POST["nombre"];
 $apellido = $_POST["apellido"];

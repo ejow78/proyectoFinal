@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - IES La Cocha</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php include 'header.php'; ?>
-
+    <?php include 'includes/header.php'; ?>
     <!-- Contenido Body -->
     <main>
         <section class="section contact">
             <div class="container">
                 <div class="section-header">
-                    <h2>Contáctanos</h2>
-                    <p>¿Tenes preguntas? Estamos aquí para ayudarte</p>
+                    <h2>Contactanos</h2>
+                    <p>¿Tenés preguntas? Estamos acá para ayudarte</p>
                 </div>
                 <div class="contact-content">
                     <!-- Form Contacto -->
@@ -68,7 +67,7 @@
                     <!-- Mapa -->
                     <div class="map-container">
                         <div class="map-header">
-                            <h3>Nuestra Ubicación</h3>
+                            <h3>Nuestra ubicación</h3>
                             <p>Sarmiento 150, La Cocha, Tucumán, Argentina</p>
                         </div>
                         <div class="map-embed">
@@ -88,8 +87,8 @@
         </section>
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
 
-    <script src="script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 </html>

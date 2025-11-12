@@ -21,7 +21,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
         <div class="nav-content">
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="../index.php" class="nav-link active">Inicio</a>
+                    <a href="index.php" class="nav-link active">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link">

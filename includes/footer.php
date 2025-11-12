@@ -22,8 +22,8 @@
                 <h3>Enlaces Rápidos</h3>
                 <ul class="footer-links">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Carreras</a></li>
-                    <li><a href="#">Admisiones</a></li>
+                    <li><a href="carreras.php">Carreras</a></li>
+                    <li><a href="preinscripcion.php">Preinscripciones abiertas</a></li>
                     <li><a href="contacto.php">Contacto</a></li>
                 </ul>
             </div>

@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IES La Cocha</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php include 'header.php'; ?>
-
+    <?php include 'includes/header.php'; ?>
     <!-- Hero Carousel -->
     <section class="hero">
         <div class="carousel" id="carousel">
@@ -103,8 +102,8 @@
         </section>
     </main>
     
-    <?php include 'footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </php>

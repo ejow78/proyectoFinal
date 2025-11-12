@@ -1,5 +1,5 @@
 <?php
-require 'conect.php';
+require 'includes/conect.php';
 session_start();
 
 $error = '';
@@ -44,7 +44,7 @@ $conn->close(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - IES La Cocha</title>
-    <link rel="stylesheet" href="styles-auth.css">
+    <link rel="stylesheet" href="assets/css/styles-auth.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -88,6 +88,6 @@ $conn->close(); ?>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

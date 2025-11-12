@@ -9,8 +9,8 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - IES La Cocha</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Preinscripción - IES La Cocha</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -28,14 +28,14 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
   </div>
 <?php endif; ?>
 
-    <?php include 'header.php'; ?>
+    <?php include 'includes/header.php'; ?>
 
     <!-- Contenido Body -->
     <main>
         <section class="section preregistro">
             <div class="container">
                 <div class="section-header">
-                    <h2>Pre-Inscribite</h2>
+                    <h2>Preinscripción</h2>
                     <p>Completa el formulario</p>
                 </div>
                 <div class="preregistro-content">
@@ -111,7 +111,7 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
               </select>
             </div>
 
-            <h5>*Presentar de manera fisica Fotocopia de DNI (ambos lados) y Fotocopia Titulo / Constancia de titulo en tramite*</h5>
+            <h5>*Presentar de manera física fotocopia de DNI (ambos lados) y fotocopia de título o constancia de título en tramite*</h5>
 
           <button type="submit" class="btn-submit">Enviar Mensaje</button>
         </form>
@@ -121,7 +121,7 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
 </section>
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
 
     <script src="script.js"></script>
 </body>
