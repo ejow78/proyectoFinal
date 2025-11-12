@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'conect.php';
+require __DIR__ . '/../includes/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare("INSERT INTO preinscripciones
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Nueva Inscripción</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Reemplazando estilos inline por link a stylespanel.css -->
-    <link rel="stylesheet" href="stylespanel.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>stylespanel.css">
 </head>
 <body>
     <!-- Usando clases del CSS externo en lugar de estilos inline -->

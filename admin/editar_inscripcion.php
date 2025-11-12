@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'conect.php';
+require __DIR__ . '/../includes/config.php';
 
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Inscripción - Sistema de Inscripciones</title>
-    <link rel="stylesheet" href="stylespanel.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>stylespanel.css">
 </head>
 <body>
     <div class="edit-page-container">

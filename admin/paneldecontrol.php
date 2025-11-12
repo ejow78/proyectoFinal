@@ -1,6 +1,5 @@
 <?php
-session_start();
-require 'conect.php';
+require __DIR__ . '/../includes/config.php';
  
 
 $usuario = $_SESSION['usuario'];
@@ -62,6 +61,7 @@ $params_with_pagination[] = $per_page;
 $params_with_pagination[] = $offset;
 $types_with_pagination = $types . "ii";
 
+
 $stmt = $conn->prepare($sql);
 if (!empty($params_with_pagination)) {
     $stmt->bind_param($types_with_pagination, ...$params_with_pagination);
@@ -99,8 +99,8 @@ $carreras_nombres = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Control - IES La Cocha</title>
-    <link rel="stylesheet" href="stylespanel.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>stylespanel.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>styles.css">
 </head>
 <body>
     <nav class="navbar-custom">
@@ -112,7 +112,7 @@ $carreras_nombres = [
                 </div>
                 <div class="navbar-user">
                     <span>Bienvenido, <strong><?php echo htmlspecialchars($usuario); ?></strong></span>
-                    <a href="logout.php" class="btn btn-light btn-sm">Cerrar Sesión</a>
+                    <a href="<?php echo BASE_URL; ?>logout.php" class="btn btn-light btn-sm">Cerrar Sesión</a>
                 </div>
             </div>
         </div>
@@ -253,7 +253,7 @@ $carreras_nombres = [
             <?php endif; ?>
         </div>
     </div>
-<?php include 'footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
     <script>
         function confirmarEliminar(id, nombre) {
             if (confirm('¿Estás seguro de que deseas eliminar la inscripción de "' + nombre + '"?')) {

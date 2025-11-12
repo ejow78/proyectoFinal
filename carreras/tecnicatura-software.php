@@ -1,26 +1,27 @@
+<?php require __DIR__ . '/../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnicatura en Desarrollo de Software</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-   <?php include 'includes/header.php'; ?>   
+   <?php include __DIR__ . '/../includes/header.php'; ?>   
     <!-- Main Content -->
     <main>
         <!-- mini menu -->
         <section class="breadcrumb-section">
             <div class="container">
                 <nav class="breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Inicio</a>
+                    <a href="<?php echo BASE_URL; ?>index.php" class="breadcrumb-link">Inicio</a>
                     <span class="breadcrumb-separator">></span>
-                    <a href="../carreras.php" class="breadcrumb-link">Carreras</a>
+                    <a href="<?php echo BASE_URL; ?>carreras.php" class="breadcrumb-link">Carreras</a>
                     <span class="breadcrumb-separator">></span>
-                    <span class="breadcrumb-current">Profesorado en Historia</span>
+                    <span class="breadcrumb-current">Tecnicatura en Desarrollo de Software</span>
                 </nav>
             </div>
         </section>
@@ -30,13 +31,13 @@
             <div class="container">
                 <div class="career-header-content">
                     <div class="career-info">
-                        <h1 class="career-title">Profesorado en Historia</h1>
+                        <h1 class="career-title">Tecnicatura Superior en Desarrollo de Software</h1>
                         <p class="career-description">
                             La Tecnicatura en Desarrollo de Software brinda una formación práctica y actualizada en el área de las tecnologías de la información. Los estudiantes se introducen en la programación, el diseño de aplicaciones y el uso de herramientas digitales que responden a las demandas del mercado laboral. El objetivo es formar técnicos capaces de adaptarse a distintos entornos de trabajo, ya sea en empresas, instituciones o emprendimientos propios, contribuyendo al crecimiento del sector tecnológico y digital.
                         </p>
                     </div>
                     <div class="career-hero-image">
-                        <img src="../assets/img/how-to-choose-your-programming-language-for-your-software.jpg" alt="Desarrollador de Software trabajando" class="hero-illustration">
+                        <img src="<?php echo IMG_URL; ?>how-to-choose-your-programming-language-for-your-software.jpg" alt="Desarrollador de Software trabajando" class="hero-illustration">
                     </div>
                 </div>
             </div>
@@ -147,7 +148,7 @@
                                 </div>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-graduation-cap"></i>
+                                <i class="fas fa-certificate"></i>
                                 <div>
                                     <strong>Modalidad:</strong>
                                     <p>Presencial</p>
@@ -161,7 +162,7 @@
                                 </div>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-certificate"></i>
+                                <i class="fas fa-graduation-cap"></i>
                                 <div>
                                     <strong>Título:</strong>
                                     <p>Técnico Superior en Desarrollo de Software</p>
@@ -174,11 +175,11 @@
                 <!-- Call to Action -->
                 <div class="career-cta">
                     <div class="cta-content">
-                        <h3>¿Interesado en esta carrera?</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, cumque fugit obcaecati repudiandae sapiente totam ipsum eveniet debitis. Laborum illum vero vel impedit odit architecto, temporibus sapiente dolor cumque tempore.</p>
+                        <h3>¿Listo para desarrollar el futuro?</h3>
+                        <p>Si eres apasionado por la tecnología y deseas convertirte en un desarrollador profesional, esta tecnicatura te preparará para enfrentar los desafíos del mercado IT. Únete a nuestro programa y abre las puertas a una carrera en constante demanda.</p>
                         <div class="cta-buttons">
-                            <a href="#" class="btn-primary">Inscribirme</a>
-                            <a href="../contacto.html" class="btn-secondary">Más información</a>
+                            <a href="<?php echo BASE_URL; ?>preinscripcion.php" class="btn-primary">Inscribirme</a>
+                            <a href="<?php echo BASE_URL; ?>contacto.php" class="btn-secondary">Más información</a>
                         </div>
                     </div>
                 </div>
@@ -186,8 +187,8 @@
         </section>
     </main>
 
-    <?php include 'includes/footer.php'; ?>
+   <?php include __DIR__ . '/../includes/footer.php'; ?>
 
-    <script src="assets/js/script.js"></script>
+    <script src="<?php echo JS_URL; ?>script.js"></script>
 </body>
 </html>

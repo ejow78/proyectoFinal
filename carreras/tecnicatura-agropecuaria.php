@@ -1,24 +1,25 @@
+<?php require __DIR__ . '/../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnicatura Superior en Gestión en Producción Agropecuaria</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-   <?php include 'includes/header.php'; ?>   
+   <?php include __DIR__ . '/../includes/header.php'; ?>   
     <!-- Main Content -->
     <main>
         <!-- mini menu -->
         <section class="breadcrumb-section">
             <div class="container">
                 <nav class="breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Inicio</a>
+                    <a href="<?php echo BASE_URL; ?>index.php" class="breadcrumb-link">Inicio</a>
                     <span class="breadcrumb-separator">></span>
-                    <a href="../carreras.php" class="breadcrumb-link">Carreras</a>
+                    <a href="<?php echo BASE_URL; ?>carreras.php" class="breadcrumb-link">Carreras</a>
                     <span class="breadcrumb-separator">></span>
                     <span class="breadcrumb-current">Tecnicatura Superior en Gestión en Producción Agropecuaria</span>
                 </nav>
@@ -32,11 +33,11 @@
                     <div class="career-info">
                         <h1 class="career-title">Tecnicatura Superior en Gestión en Producción Agropecuaria</h1>
                         <p class="career-description">
-                            La Tecnicatura en Desarrollo de Software brinda una formación práctica y actualizada en el área de las tecnologías de la información. Los estudiantes se introducen en la programación, el diseño de aplicaciones y el uso de herramientas digitales que responden a las demandas del mercado laboral. El objetivo es formar técnicos capaces de adaptarse a distintos entornos de trabajo, ya sea en empresas, instituciones o emprendimientos propios, contribuyendo al crecimiento del sector tecnológico y digital.
+                            La Tecnicatura en Gestión de Producción Agropecuaria forma técnicos especializados en la administración y optimización de procesos productivos agrícolas y ganaderos. Los estudiantes adquieren conocimientos sobre cultivos, crianza, sanidad animal, gestión de recursos y sustentabilidad. La formación combina teoría con prácticas de campo, tecnologías modernas y herramientas de gestión empresarial. El objetivo es preparar profesionales capaces de mejorar la productividad y competitividad del sector agropecuario.
                         </p>
                     </div>
                     <div class="career-hero-image">
-                        <img src="../assets/img/how-to-choose-your-programming-language-for-your-software.jpg" alt="Desarrollador de Software trabajando" class="hero-illustration">
+                        <img src="<?php echo IMG_URL; ?>how-to-choose-your-programming-language-for-your-software.jpg" alt="Técnico en Producción Agropecuaria" class="hero-illustration">
                     </div>
                 </div>
             </div>
@@ -50,14 +51,15 @@
                     <div class="detail-card">
                         <h3 class="detail-title">Perfil del egresado</h3>
                         <div class="detail-content">
-                            <p>Capaz de analizar requerimientos, construir interfaces, programar backends y bases de datos, y desplegar aplicaciones.</p>
+                            <p>Técnico especializado en la gestión integral de procesos agropecuarios, capaz de optimizar la producción de forma sustentable y rentable.</p>
                             <ul class="skills-list">
-                                <li>Desarrollo de aplicaciones web y móviles</li>
-                                <li>Programación en múltiples lenguajes</li>
-                                <li>Gestión de bases de datos</li>
-                                <li>Metodologías ágiles de desarrollo</li>
-                                <li>Testing y control de calidad</li>
-                                <li>Trabajo en equipo y comunicación efectiva</li>
+                                <li>Gestión de cultivos y producción agrícola</li>
+                                <li>Administración ganadera y sanidad animal</li>
+                                <li>Uso de tecnologías agrícolas modernas</li>
+                                <li>Gestión empresarial agropecuaria</li>
+                                <li>Producción sustentable y ambiental</li>
+                                <li>Análisis de mercado agropecuario</li>
+                                <li>Manejo de recursos naturales</li>
                             </ul>
                         </div>
                     </div>
@@ -73,14 +75,14 @@
                                 </button>
                                 <div class="curriculum-content" id="año1">
                                     <ul class="subjects-list">
-                                        <li>Pedagogía</li>
-                                        <li>Didactica General</li>
-                                        <li>Psicología Educacional</li>
-                                        <li>Lectura Escritura y Oralidad</li>
-                                        <li>Historia Mundial I</li>
-                                        <li>Problema de Historia y Filosofia</li>
-                                        <li>Prehistoria y Arqueologia</li>
-                                        <li>Practicas Profesional</li>
+                                        <li>Biología General</li>
+                                        <li>Química Agrícola</li>
+                                        <li>Matemática Aplicada</li>
+                                        <li>Botánica Agrícola</li>
+                                        <li>Suelos y Fertilidad</li>
+                                        <li>Ecología Agraria</li>
+                                        <li>Introducción a la Informática Agrícola</li>
+                                        <li>Prácticas de Campo I</li>
                                     </ul>
                                 </div>
                             </div>
@@ -91,12 +93,13 @@
                                 </button>
                                 <div class="curriculum-content" id="año2">
                                     <ul class="subjects-list">
-                                        <li>Programación II</li>
-                                        <li>Base de Datos II</li>
-                                        <li>Taller Programacion II</li>
-                                        <li>Inglés Técnico II</li>
-                                        <li>Matematica II</li>
-                                        <li>Estadística Aplicada</li>
+                                        <li>Producción de Cultivos Extensivos</li>
+                                        <li>Producción de Cultivos Intensivos</li>
+                                        <li>Zootecnia General</li>
+                                        <li>Sanidad Animal</li>
+                                        <li>Máquinas y Mecanización Agrícola</li>
+                                        <li>Gestión Empresarial Agrícola</li>
+                                        <li>Prácticas de Campo II</li>
                                     </ul>
                                 </div>
                             </div>
@@ -107,28 +110,13 @@
                                 </button>
                                 <div class="curriculum-content" id="año3">
                                     <ul class="subjects-list">
-                                        <li>asdasd</li>
-                                        <li>asdasd</li>
-                                        <li>asdsad</li>
-                                        <li>asdasd</li>
-                                        <li>asdasd</li>
-                                        <li>asdasd</li>
-                                    </ul>
-                                </div>
-                            </div>
-                              <div class="curriculum-year">
-                                <button class="curriculum-toggle" onclick="toggleCurriculum('año4')">
-                                    <span>Cuarto Año</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="curriculum-content" id="año4">
-                                    <ul class="subjects-list">
-                                        <li>Programación II</li>
-                                        <li>Base de Datos II</li>
-                                        <li>Taller Programacion II</li>
-                                        <li>Inglés Técnico II</li>
-                                        <li>Matematica II</li>
-                                        <li>Estadística Aplicada</li>
+                                        <li>Producción Ganadera Intensiva</li>
+                                        <li>Forrajes y Alimentación Animal</li>
+                                        <li>Técnicas de Riego y Drenaje</li>
+                                        <li>Producción Orgánica Sustentable</li>
+                                        <li>Comercialización Agropecuaria</li>
+                                        <li>Legislación Agropecuaria</li>
+                                        <li>Prácticas de Campo III</li>
                                     </ul>
                                 </div>
                             </div>
@@ -147,7 +135,7 @@
                                 </div>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-graduation-cap"></i>
+                                <i class="fas fa-certificate"></i>
                                 <div>
                                     <strong>Modalidad:</strong>
                                     <p>Presencial</p>
@@ -157,28 +145,29 @@
                                 <i class="fas fa-calendar"></i>
                                 <div>
                                     <strong>Horarios:</strong>
-                                    <p>Turno Noche: 18:00 - 22:30 hs</p>
+                                    <p>Turno Mañana: 07:00 - 12:00 hs</p>
                                 </div>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-certificate"></i>
+                                <i class="fas fa-graduation-cap"></i>
                                 <div>
                                     <strong>Título:</strong>
-                                    <p>Técnico Superior en Desarrollo de Software</p>
+                                    <p>Técnico Superior en Gestión de Producción Agropecuaria</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+
                 <!-- Call to Action -->
                 <div class="career-cta">
                     <div class="cta-content">
-                        <h3>¿Interesado en esta carrera?</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, cumque fugit obcaecati repudiandae sapiente totam ipsum eveniet debitis. Laborum illum vero vel impedit odit architecto, temporibus sapiente dolor cumque tempore.</p>
+                        <h3>¿Apasionado por la agricultura y ganadería?</h3>
+                        <p>Si deseas aplicar tecnología e innovación al sector agropecuario, optimizar procesos productivos y contribuir al desarrollo rural, esta tecnicatura es para ti. Únete y conviértete en un profesional altamente demandado.</p>
                         <div class="cta-buttons">
-                            <a href="#" class="btn-primary">Inscribirme</a>
-                            <a href="../contacto.html" class="btn-secondary">Más información</a>
+                            <a href="<?php echo BASE_URL; ?>preinscripcion.php" class="btn-primary">Inscribirme</a>
+                            <a href="<?php echo BASE_URL; ?>contacto.php" class="btn-secondary">Más información</a>
                         </div>
                     </div>
                 </div>
@@ -186,8 +175,8 @@
         </section>
     </main>
 
-   <?php include 'includes/footer.php'; ?>
+   <?php include __DIR__ . '/../includes/footer.php'; ?>
 
-    <script src="assets/js/script.js"></script>
+    <script src="<?php echo JS_URL; ?>script.js"></script>
 </body>
 </html>

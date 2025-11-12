@@ -1,14 +1,31 @@
 <?php
-require 'includes/conect.php';
-session_start();
+require 'includes/config.php';
+
+// Iniciar sesión solo si no está activa
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Si ya estás logueado, ir al panel de admin
+if (isset($_SESSION['usuario'])) {
+    header("Location: " . ADMIN_URL . "paneldecontrol.php");
+    exit();
+}
 
 $error = '';
+$referrer = isset($_GET['referrer']) ? $_GET['referrer'] : (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : BASE_URL . 'index.php');
+
+// Validar que el referrer sea del mismo dominio (seguridad)
+$parsed_referrer = parse_url($referrer);
+$parsed_base = parse_url('http://' . $_SERVER['HTTP_HOST'] . '/');
+if ($parsed_referrer['host'] !== $parsed_base['host']) {
+    $referrer = BASE_URL . 'index.php';
+}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $usuario = trim($_POST['usuario'] ?? '');
     $password = trim($_POST['password'] ?? '');
-
-
+    $referrer_post = trim($_POST['referrer'] ?? BASE_URL . 'index.php');
 
     if (!empty($usuario) && !empty($password)) {
         $sql = "SELECT id, usuario, password, rol FROM usuarios WHERE usuario = ?";
@@ -22,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (password_verify($password, $row['password'])) {
                 $_SESSION['usuario'] = $row['usuario'];
                 $_SESSION['rol'] = $row['rol'];
-                header("Location: index.php");
+                header("Location: " . $referrer_post);
                 exit();
             } else {
                 $error = "Contraseña incorrecta.";
@@ -56,13 +73,19 @@ $conn->close(); ?>
             <div class="auth-container">
                 <div class="auth-card">
                     <div class="auth-header">
-                        <a href="index.php" class="logo-link">
-                            <h1>IES La Cocha</h1>
-                        </a>
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <a href="<?php echo BASE_URL; ?>index.php" class="logo-link">
+                                <h1>IES La Cocha</h1>
+                            </a>
+                            <a href="<?php echo htmlspecialchars($referrer); ?>" class="back-button" title="Volver">
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="auth-form-container">
                         <form class="auth-form" method="POST" action="login.php">
+                            <input type="hidden" name="referrer" value="<?php echo htmlspecialchars($referrer); ?>">
                             <div class="form-group">
                                 <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
                             </div>

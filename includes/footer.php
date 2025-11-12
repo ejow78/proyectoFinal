@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/config.php';
+?>
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
@@ -21,20 +24,20 @@
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="carreras.php">Carreras</a></li>
-                    <li><a href="preinscripcion.php">Preinscripciones abiertas</a></li>
-                    <li><a href="contacto.php">Contacto</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>index.php">Inicio</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>carreras.php">Carreras</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>preinscripcion.php">Preinscripciones abiertas</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>contacto.php">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Institucional</h3>
                 <div class="institutional-logos">
                     <a href="https://www.argentina.gob.ar/educacion/infod" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/img/logo_infod.png" alt="Logo INFOD">
+                        <img src="<?php echo IMG_URL; ?>logo_infod.png" alt="Logo INFOD">
                     </a>
                     <a href="https://www.argentina.gob.ar/educacion" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/img/logo_ministerio.png" alt="Logo Ministerio">
+                        <img src="<?php echo IMG_URL; ?>logo_ministerio.png" alt="Logo Ministerio">
                     </a>
                 </div>
             </div>

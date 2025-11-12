@@ -1,10 +1,11 @@
-<!DOCTYPE php>
-<php lang="es">
+<?php require __DIR__ . '/includes/config.php'; ?>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IES La Cocha</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -14,21 +15,21 @@
     <section class="hero">
         <div class="carousel" id="carousel">
             <div class="carousel-slide active">
-                <img src="assets\img\hero-bg-Bg8TrwLN.jpg" alt="Campus universitario">
+                <img src="<?php echo IMG_URL; ?>hero-bg-Bg8TrwLN.jpg" alt="Campus universitario">
                 <div class="carousel-content">
                     <h2>Inscripciones</h2>
                     <p>Ya estan abiertas las preinscripciones para el ciclo lectivo 2026</p>
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="assets\img\MathClass_0033_hero.jpg" alt="Estudiantes">
+                <img src="<?php echo IMG_URL; ?>MathClass_0033_hero.jpg" alt="Estudiantes">
                 <div class="carousel-content">
                     <h2>Formando el Futuro</h2>
                     <p>lorem ipsum</p>
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="assets\img\Agro1-1100x733-1.jpg" alt="Graduación">
+                <img src="<?php echo IMG_URL; ?>Agro1-1100x733-1.jpg" alt="Graduación">
                 <div class="carousel-content">
                     <h2>Tu Futuro Comienza Aquí</h2>
                     <p>lorem ipsum</p>
@@ -59,7 +60,7 @@
                         </div>
                         <h3>Tecnicatura en Desarrollo de Software</h3>
                         <p>Desarrolla aplicaciones web y móviles con las tecnologías más demandadas del mercado.</p>
-                        <a href="carreras/desarrollo-software.php" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        <a href="<?php echo CARRERAS_URL; ?>tecnicatura-software.php" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="program-card">
                         <div class="program-icon">
@@ -67,7 +68,7 @@
                         </div>
                         <h3>Profesorado en Matemáticas</h3>
                         <p>Especialízate en la enseñanza de matemáticas con un enfoque práctico y actualizado.</p>
-                        <a href="#" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        <a href="<?php echo CARRERAS_URL; ?>profesorado-matematica.php" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="program-card">
                         <div class="program-icon">
@@ -75,7 +76,7 @@
                         </div>
                         <h3>Profesorado en Historia</h3>
                         <p>Especialízate en la enseñanza de la historia con un enfoque práctico y actualizado.</p>
-                        <a href="carreras/profesorado-historia.php" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                        <a href="<?php echo CARRERAS_URL; ?>profesorado-historia.php" class="program-link">Ver más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -95,7 +96,7 @@
                         </p>
                     </div>
                     <div class="about-image">
-                        <img src="assets\img\carrusel2.png?height=400&width=500" alt="Instituto La Cocha">
+                        <img src="<?php echo IMG_URL; ?>carrusel2.png" alt="Instituto La Cocha">
                     </div>
                 </div>
             </div>
@@ -104,6 +105,6 @@
     
     <?php include 'includes/footer.php'; ?>
 
-    <script src="assets/js/script.js"></script>
+    <script src="<?php echo JS_URL; ?>script.js"></script>
 </body>
 </php>
