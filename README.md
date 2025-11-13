@@ -4,11 +4,11 @@ Este proyecto forma parte de la materia Laboratorio de Programación. Su objetiv
 
 ## Objetivos del Proyecto
 
-- Modernizar el diseño visual del sitio institucional.
-- Modernizar la forma de inscripcion y mejorar el acceso de los docentes administrativos a las inscripciones de alumnos de manera no presencial.
-- Mejorar la experiencia de usuario (UX).
-- Implementar un diseño responsive que se adapte a dispositivos móviles.
-- Agregar funcionalidades básicas como formularios de contacto, login y registro.
+- Modernizar el Diseño: Actualizar el diseño visual del sitio institucional a un estándar moderno, limpio y responsivo.
+- Digitalizar Inscripciones: Reemplazar el proceso manual de inscripción por un formulario de preinscripción digital.
+- Mejorar la UX: Optimizar la experiencia de usuario y la navegación en todo el sitio.
+- Gestión Administrativa: Crear un panel de control privado para que los docentes administrativos puedan consultar, gestionar, filtrar y editar las preinscripciones de los alumnos de forma no presencial.
+- Implementar Seguridad: Añadir un sistema de autenticación seguro y gestión de sesiones con roles de usuario.
 
 ## Tecnologías Utilizadas
 
@@ -16,17 +16,39 @@ Este proyecto forma parte de la materia Laboratorio de Programación. Su objetiv
 - CSS3: para los estilos visuales.
 - Bootstrap 5: para diseño responsive y componentes modernos.
 - JavaScript: para validar formularios y agregar interactividad básica.
+- PHP: Como lenguaje principal del lado del servidor.
+- MySQL: Como sistema de gestión de base de datos (a través de mysqli).
 
 ## Estructura de Archivos
 
 ```
 proyectoFinal/
-├── index.html          # Página principal
-├── contacto.html       # Página de contacto
-├── login.html          # Página de inicio de sesión
-├── register.html       # Página de registro
-├── script.js           # Lógica en JavaScript
-└── styles.css          # Estilos personalizadosa
+├── admin/
+│   ├── paneldecontrol.php      # (Ver, filtrar y buscar inscripciones)
+│   ├── crear_inscripcion.php   # (Formulario para crear)
+│   ├── editar_inscripcion.php  # (Formulario para editar)
+│   ├── eliminar_inscripcion.php # (Lógica para borrar)
+│   └── gener_contra_hash.php   # (Utilidad para hashear contraseñas)
+├── assets/
+│   ├── css/                    # (styles.css, stylespanel.css, etc.)
+│   ├── js/                     # (script.js)
+│   └── img/                    # (Logos, banners, etc.)
+├── carreras/
+│   ├── profesorado-historia.php
+│   ├── tecnicatura-software.php
+│   └── ...                     # (Páginas para cada carrera)
+├── includes/
+│   ├── conect.php              # (Conexión a la BD MySQL)
+│   ├── config.php              # (Constantes, sesiones y config global)
+│   ├── header.php              # (Cabecera reutilizable)
+│   └── footer.php              # (Pie de página reutilizable)
+├── index.php                   # (Página de inicio)
+├── carreras.php                # (Listado de carreras)
+├── contacto.php                # (Formulario de contacto)
+├── login.php                   # (Inicio de sesión de admin)
+├── logout.php                  # (Cierre de sesión)
+├── preinscripcion.php          # (Formulario de preinscripción público)
+└── procesarregistro.php        # (Recibe el POST de preinscripcion.php)
 ```
 
 ## Páginas del Sitio
