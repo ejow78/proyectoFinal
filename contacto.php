@@ -1,3 +1,9 @@
+<?php
+session_start();
+$ok = $_SESSION['flash_ok']  ?? null;
+$err = $_SESSION['flash_error'] ?? null;
+unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,7 +27,18 @@
                 <div class="contact-content">
                     <!-- Form Contacto -->
                     <div class="contact-form-container">
-                        <form class="contact-form" id="contactForm">
+                        <?php if ($ok): ?>
+                            <div style="padding:10px;border-radius:6px;background:#e8f7ed;color:#1f7a3e;margin-bottom:12px">
+                                <?= htmlspecialchars($ok) ?>
+                            </div>
+                        <?php endif; ?>
+                
+                        <?php if ($err): ?>
+                            <div style="padding:10px;border-radius:6px;background:#fde2e1;color:#8a1f1f;margin-bottom:12px">
+                                <?= htmlspecialchars($err) ?>
+                            </div>
+                        <?php endif; ?>
+                        <form class="contact-form" id="contactFormPHP" method="POST" action="<?php echo BASE_URL; ?>procesar_contacto.php">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="firstName">Nombre *</label>

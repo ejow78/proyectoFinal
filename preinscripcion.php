@@ -16,31 +16,34 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
 </head>
 <body>
 
-  <?php if ($ok): ?>
-  <div style="padding:10px;border-radius:6px;background:#e8f7ed;color:#1f7a3e;margin-bottom:12px">
-    <?= htmlspecialchars($ok) ?>
-  </div>
-<?php endif; ?>
-
-<?php if ($err): ?>
-  <div style="padding:10px;border-radius:6px;background:#fde2e1;color:#8a1f1f;margin-bottom:12px">
-    <?= htmlspecialchars($err) ?>
-  </div>
-<?php endif; ?>
+  
 
     <?php include 'includes/header.php'; ?>
+
+
 
     <!-- Contenido Body -->
     <main>
         <section class="section preregistro">
             <div class="container">
+              <?php if ($ok): ?>
+              <div style="padding:10px;border-radius:6px;background:#e8f7ed;color:#1f7a3e;margin-bottom:12px">
+                <?= htmlspecialchars($ok) ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if ($err): ?>
+              <div style="padding:10px;border-radius:6px;background:#fde2e1;color:#8a1f1f;margin-bottom:12px">
+                <?= htmlspecialchars($err) ?>
+              </div>
+            <?php endif; ?>
                 <div class="section-header">
                     <h2>Preinscripción</h2>
                     <p>Completa el formulario</p>
                 </div>
                 <div class="preregistro-content">
       <div class="preregistro-form-container">
-        <form class="registroform-form" id="registroform" action="panel/procesarregistro.php" method="POST">
+        <form class="registroform-form" id="registroform" action="<?php echo BASE_URL; ?>procesar_registro.php" method="POST">
   
           <div class="form-row">
             <div class="form-group">
@@ -113,7 +116,7 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
 
             <h5>*Presentar de manera física fotocopia de DNI (ambos lados) y fotocopia de título o constancia de título en tramite*</h5>
 
-          <button type="submit" class="btn-submit">Enviar Mensaje</button>
+          <button type="submit" class="btn-submit">Enviar</button>
         </form>
       </div>
     </div>

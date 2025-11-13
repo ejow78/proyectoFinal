@@ -15,9 +15,9 @@
     <section class="hero">
         <div class="carousel" id="carousel">
             <div class="carousel-slide active">
-                <img src="<?php echo IMG_URL; ?>hero-bg-Bg8TrwLN.jpg" alt="Campus universitario">
+                <img src="<?php echo IMG_URL; ?>inscripciones.webp" alt="Campus universitario">
                 <div class="carousel-content">
-                    <h2>Inscripciones</h2>
+                    <h2>Preinscribite!</h2>
                     <p>Ya estan abiertas las preinscripciones para el ciclo lectivo 2026</p>
                 </div>
             </div>

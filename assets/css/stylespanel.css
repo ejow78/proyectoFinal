@@ -29,6 +29,11 @@ body {
   background-color: #f8f9fa;
   color: var(--color-texto);
   line-height: 1.6;
+
+  /* --- LÍNEAS AÑADIDAS PARA STICKY FOOTER --- */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ===================================
@@ -456,7 +461,7 @@ body {
    =================================== */
 
 .container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -537,4 +542,40 @@ body {
   .modal-footer .btn {
     width: 100%;
   }
+}
+/* ===================================
+   STICKY FOOTER HELPER
+   (Hace que el contenido principal crezca)
+   =================================== */
+.container.mt-4 {
+  flex-grow: 1;
+}
+
+/* ===================================
+   MEJORA DE ESTILOS PARA TABS
+   (Personaliza las pestañas de Bootstrap)
+   =================================== */
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6; /* Línea gris más sutil */
+  margin-bottom: 24px;
+}
+
+.nav-tabs .nav-link {
+  font-size: 17px;         /* Letra más grande */
+  font-weight: 600;        /* Letra más gruesa */
+  color: var(--color-texto-claro); /* Color de pestaña inactiva */
+  border: none;            /* Quitar bordes feos */
+  border-bottom: 4px solid transparent; /* Espacio para el indicador azul */
+  padding: 16px 24px;
+  transition: all 0.2s ease;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--color-texto); /* Color al pasar el mouse */
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--color-principal); /* Color azul primario */
+  border-bottom-color: var(--color-principal); /* Línea azul activa */
+  background-color: transparent;
 }
