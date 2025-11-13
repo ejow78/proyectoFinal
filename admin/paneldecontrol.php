@@ -1,6 +1,12 @@
 <?php
 require __DIR__ . '/../includes/config.php';
- 
+
+
+ if (!isset($_SESSION['usuario'])) {
+    // Si no, redirigir a la página de login
+    header("Location: " . BASE_URL . "login.php");
+    exit();
+}
 
 $usuario = $_SESSION['usuario'];
 $user_rol = $_SESSION['rol'];
@@ -99,8 +105,8 @@ $carreras_nombres = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Control - IES La Cocha</title>
-    <link rel="stylesheet" href="<?php echo CSS_URL; ?>stylespanel.css">
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>styles.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>stylespanel.css">
 </head>
 <body>
     <nav class="navbar-custom">
