@@ -1686,6 +1686,71 @@ body {
   padding-right: 10px;
 }
 
+.pdf-container {
+    margin-bottom: 60px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  
+}
+
+.form-comunicado {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    font-family: 'Inter', sans-serif;
+}
+
+.form-comunicado h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.form-comunicado label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-comunicado textarea,
+.form-comunicado input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: vertical;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.form-comunicado button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-comunicado button[type="submit"]:hover {
+    background-color: #1a252f;
+}
+
 @media (max-width: 768px) {
   .user-saludo {
     display: none; 

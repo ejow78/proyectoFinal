@@ -22,17 +22,17 @@
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="<?php echo IMG_URL; ?>MathClass_0033_hero.jpg" alt="Estudiantes">
+                <img src="<?php echo IMG_URL; ?>lacocha.jpg" alt="Estudiantes">
                 <div class="carousel-content">
                     <h2>Formando el Futuro</h2>
-                    <p>lorem ipsum</p>
+                    <p>Impulsando mentes, creando oportunidades.</p>
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="<?php echo IMG_URL; ?>Agro1-1100x733-1.jpg" alt="Graduación">
+                <img src="<?php echo IMG_URL; ?>aulacolegio.jpg" alt="Graduación">
                 <div class="carousel-content">
                     <h2>Tu Futuro Comienza Aquí</h2>
-                    <p>lorem ipsum</p>
+                    <p>Activá tu potencial. Aprendé, crecé, inspirá.</p>
                 </div>
             </div>
             <button class="carousel-btn prev" id="prevBtn">

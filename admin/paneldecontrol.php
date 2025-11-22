@@ -136,8 +136,10 @@ $filter_params = http_build_query([
                     <h3 class="navbar-title">IES La Cocha</h3>
                     <small class="navbar-subtitle">Panel de Control</small>
                 </div>
+                
                 <div class="navbar-user">
                     <span>Bienvenido, <strong><?php echo htmlspecialchars($usuario); ?></strong></span>
+                    <a href="<?php echo BASE_URL; ?>index.php" class="btn btn-light btn-sm">Volver al Inicio</a>
                     <a href="<?php echo BASE_URL; ?>logout.php" class="btn btn-light btn-sm">Cerrar Sesión</a>
                 </div>
             </div>
@@ -151,7 +153,7 @@ $filter_params = http_build_query([
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
         <?php endif; ?>
-
+            
         <ul class="nav nav-tabs" id="adminTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="inscripciones-tab" data-bs-toggle="tab" data-bs-target="#inscripciones-panel" type="button" role="tab" aria-controls="inscripciones-panel" aria-selected="true">
@@ -164,15 +166,19 @@ $filter_params = http_build_query([
                 </button>
             </li>
         </ul>
+        
 
-        <div class="tab-content" id="adminTabContent">
-            
+        
             <div class="tab-pane fade show active" id="inscripciones-panel" role="tabpanel" aria-labelledby="inscripciones-tab">
                 
                 <div class="d-flex justify-content-between align-items-center mb-4 mt-4">
                     <h2>Gestión de Inscripciones</h2>
                     <?php if ($user_rol === 'admin'): ?>
-                        <a href="crear_inscripcion.php" class="btn btn-primary">+ Nueva Inscripción</a>
+                               <div style="display:flex; gap:0.5rem; align-items:center;">
+                                   <a href="crear_inscripcion.php" class="btn btn-primary">+ Nueva Inscripción</a>
+                                   <button type="button" id="btnExportCsv" class="btn btn-outline-success">Exportar Excel</button>
+                                   <button type="button" id="btnExportPdf" class="btn btn-outline-danger">Exportar PDF</button>
+                               </div>
                     <?php endif; ?>
                 </div>
 
@@ -327,6 +333,7 @@ $filter_params = http_build_query([
                         </nav>
                     <?php endif; ?>
                 </div>
+            
 
             </div> </div> </div> <?php include __DIR__ . '/../includes/footer.php'; ?>
     
@@ -346,6 +353,83 @@ $filter_params = http_build_query([
             window.location.href = 'eliminar_mensaje.php?id=' + id;
         }
     }
+</script>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+<script>
+    // Obtener valores del formulario de filtros
+    function getFilterParams() {
+        const form = document.querySelector('#inscripciones-panel form') || document.querySelector('form');
+        const params = new URLSearchParams();
+        if (!form) return params;
+        const search = form.querySelector('input[name="search"]')?.value || '';
+        const carrera = form.querySelector('select[name="carrera"]')?.value || '';
+        const localidad = form.querySelector('select[name="localidad"]')?.value || '';
+        if (search) params.append('search', search);
+        if (carrera) params.append('carrera', carrera);
+        if (localidad) params.append('localidad', localidad);
+        return params;
+    }
+
+    async function fetchInscripcionesJson() {
+        const params = getFilterParams();
+        const url = 'inscripciones_json.php?' + params.toString();
+        const resp = await fetch(url, {credentials: 'same-origin'});
+        if (!resp.ok) throw new Error('Error al obtener datos: ' + resp.status);
+        return resp.json();
+    }
+
+    function downloadCsv(rows) {
+        const cols = ['ID','Nombre','Apellido','DNI','Genero','Localidad','Direccion','Email','Telefono','Carrera','Fecha'];
+        const lines = [cols.join(',')];
+        for (const r of rows) {
+            const vals = [r.id, r.nombre, r.apellido, r.dni, r.genero, '"' + (r.localidad_nombre || r.localidad) + '"', '"' + (r.direccion || '') + '"', r.email, r.telefono, '"' + (r.carrera_nombre || r.carrera) + '"', r.creadoa];
+            lines.push(vals.join(','));
+        }
+        const csv = '\uFEFF' + lines.join('\n');
+        const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'inscripciones_' + new Date().toISOString().slice(0,19).replace(/[:T]/g,'_') + '.csv';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    async function exportCsvHandler() {
+        try {
+            const data = await fetchInscripcionesJson();
+            downloadCsv(data.rows);
+        } catch (err) {
+            alert('Error al exportar CSV: ' + err.message);
+        }
+    }
+
+    async function exportPdfHandler() {
+        try {
+            const { jsPDF } = window.jspdf;
+            const data = await fetchInscripcionesJson();
+            const rows = data.rows.map(r => [r.id, r.nombre, r.apellido, r.dni, r.genero, r.localidad_nombre || r.localidad, r.direccion || '', r.email, r.telefono, r.carrera_nombre || r.carrera, r.creadoa]);
+            const doc = new jsPDF({orientation: 'landscape', unit: 'pt', format: 'a4'});
+            doc.setFontSize(12);
+            doc.text('Listado de Preinscripciones', 40, 40);
+            doc.autoTable({
+                startY: 60,
+                head: [[ 'ID','Nombre','Apellido','DNI','Genero','Localidad','Direccion','Email','Telefono','Carrera','Fecha' ]],
+                body: rows,
+                styles: { fontSize: 9 }
+            });
+            doc.save('inscripciones_' + new Date().toISOString().slice(0,19).replace(/[:T]/g,'_') + '.pdf');
+        } catch (err) {
+            alert('Error al generar PDF: ' + err.message);
+        }
+    }
+
+    document.getElementById('btnExportCsv')?.addEventListener('click', exportCsvHandler);
+    document.getElementById('btnExportPdf')?.addEventListener('click', exportPdfHandler);
 </script>
 </body>
 </html>
