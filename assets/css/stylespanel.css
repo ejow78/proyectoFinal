@@ -334,15 +334,27 @@ body {
   max-width: 180px;
 }
 
-.table td:nth-child(11),
-.table th:nth-child(11) {
+/* Modificación para que siempre agarre la última columna (Acciones) */
+.table td:last-child,
+.table th:last-child {
   position: sticky;
   right: 0;
   background: white;
   white-space: nowrap;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
-  min-width: 180px;
+  min-width: 180px;  /* Ancho mínimo para que quepan los 2 botones */
   z-index: 10;
+  overflow: visible !important; /* Importante: quita los ... */
+  text-overflow: clip !important; /* Importante: evita el recorte de texto */
+}
+
+/* Aseguramos que el encabezado también tenga el fondo correcto */
+.table th:last-child {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover td:last-child {
+  background-color: #f8f9fa;
 }
 
 .table th:nth-child(11) {
@@ -578,4 +590,35 @@ body {
   color: var(--color-principal); /* Color azul primario */
   border-bottom-color: var(--color-principal); /* Línea azul activa */
   background-color: transparent;
+}
+
+/* =========================================
+   CORRECCIÓN PARA MÓVILES (Table responsive)
+   ========================================= */
+@media (max-width: 768px) {
+  /* Hacemos que la columna de acciones deje de flotar encima */
+  .table td:last-child,
+  .table th:last-child {
+    position: static !important; /* Quita el 'sticky' */
+    box-shadow: none !important; /* Quita la sombra */
+    background: transparent !important;
+    min-width: auto !important; /* Deja que tome el ancho natural */
+    width: auto !important;
+    border-left: none;
+  }
+
+  /* Aseguramos que el contenedor permita deslizar (scroll) horizontalmente */
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Deslizamiento suave en iPhone */
+  }
+  
+  /* Ajuste opcional para que los botones no queden gigantes en móvil */
+  .table td:last-child {
+      display: flex;
+      gap: 5px;
+      justify-content: flex-start;
+  }
 }

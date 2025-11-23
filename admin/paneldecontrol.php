@@ -210,40 +210,44 @@ $filter_params = http_build_query([
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>ID</th><th>Nombre Completo</th><th>DNI</th><th>Genero</th><th>Localidad</th>
-                                    <th>Direccion</th><th>Email</th><th>Telefono</th><th>Carrera</th>
-                                    <th>Fecha de Inscripción</th><th>Acciones</th>
+                                    <th>ID</th>
+                                    <th>Nombre Completo</th>
+                                    <th>DNI</th>
+                                    <th>Genero</th>
+                                    <th>Domicilio</th> 
+                                    <th>Contacto</th>
+                                    <th>Carrera</th>
+                                    <th>Fecha de Inscripción</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if ($result_insc->num_rows > 0): ?>
-                                    <?php while ($row = $result_insc->fetch_assoc()): ?>
-                                        <tr>
-                                            <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo htmlspecialchars($row['nombre'] . ' ' . $row['apellido']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['dni']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['genero']); ?></td>
-                                            <td><?php echo htmlspecialchars($localidades_nombres[$row['localidad']] ?? $row['localidad']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['direccion']); ?></td>
-                                            <td style="text-transform: lowercase;"><?php echo htmlspecialchars($row['email']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['telefono']); ?></td>
-                                            <td><?php echo htmlspecialchars($carreras_nombres[$row['carrera']] ?? $row['carrera']); ?></td>
-                                            <td><?php echo date('d/m/Y H:i', strtotime($row['creadoa'])); ?></td>
-                                            <td style="white-space: nowrap;">
-                                                <?php if ($user_rol === 'admin'): ?>
-                                                    <a href="editar_inscripcion.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Editar</a>
-                                                    <button onclick="confirmarEliminarInsc(<?php echo $row['id']; ?>, '<?php echo htmlspecialchars(addslashes($row['nombre'] . ' ' . $row['apellido'])); ?>')" 
-                                                            class="btn btn-danger btn-sm">Eliminar</button>
-                                                <?php else: ?>
-                                                    <span class="text-muted">Sin permisos</span>
-                                                <?php endif; ?>
-                                            </td>
-                                        </tr>
-                                    <?php endwhile; ?>
-                                <?php else: ?>
-                                    <tr><td colspan="11" class="text-center text-muted">No se encontraron inscripciones</td></tr>
-                                <?php endif; ?>
-                            </tbody>
+                            <?php if ($result_insc->num_rows > 0): ?>
+                                <?php while ($row = $result_insc->fetch_assoc()): ?>
+                                    <tr>
+                                        <td><?php echo $row['id']; ?></td>
+                                        <td><?php echo htmlspecialchars($row['nombre'] . ' ' . $row['apellido']); ?></td>
+                                        <td><?php echo htmlspecialchars($row['dni']); ?></td>
+                                        <td><?php echo htmlspecialchars($row['genero']); ?></td>
+                                        <td><?php $nombre_loc = $localidades_nombres[$row['localidad']] ?? $row['localidad']; echo htmlspecialchars($row['direccion'] . ' - ' . $nombre_loc); ?></td>
+                                        <td><div><span style="text-transform: lowercase; font-weight: 600;"><?php echo htmlspecialchars($row['email']); ?></span></div><div style="font-size: 0.9em; color: #666;"><?php echo htmlspecialchars($row['telefono']); ?></div></td>
+                                        <td><?php echo htmlspecialchars($carreras_nombres[$row['carrera']] ?? $row['carrera']); ?></td>
+                                        <td><?php echo date('d/m/Y H:i', strtotime($row['creadoa'])); ?></td>
+                                        <td style="white-space: nowrap;">
+                                            <?php if ($user_rol === 'admin'): ?>
+                                                <a href="editar_inscripcion.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Editar</a>
+                                                <button onclick="confirmarEliminarInsc(<?php echo $row['id']; ?>, '<?php echo htmlspecialchars(addslashes($row                      ['nombre'] . ' ' . $row['apellido'])); ?>')" 
+                                                        class="btn btn-danger btn-sm">Eliminar</button>
+                                            <?php else: ?>
+                                                <span class="text-muted">Sin permisos</span>
+                                            <?php endif; ?>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            <?php else: ?>
+                                <tr><td colspan="9" class="text-center text-muted">No se encontraron inscripciones</td></tr>
+                            <?php endif; ?>
+                        </tbody>
                         </table>
                     </div>
 
