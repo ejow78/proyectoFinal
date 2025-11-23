@@ -126,6 +126,6 @@ unset($_SESSION['flash_ok'], $_SESSION['flash_error']);
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="script.js"></script>
+    <script src="<?php echo JS_URL; ?>script.js"></script>
 </body>
 </php>
