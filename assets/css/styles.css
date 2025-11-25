@@ -267,15 +267,13 @@ body {
   padding: 10px;
   gap: 5px;
 
-  /* Posicionamiento fijo para que siga al usuario */
+
   position: fixed;
   right: 20px;
   top: 20px;
   z-index: 2000;
   background-color: rgba(255, 255, 255, 0.8);
-  /* Semi-transparent background for visibility */
   border-radius: 50%;
-  /* Make it circular */
   width: 45px;
   height: 45px;
   justify-content: center;
@@ -770,7 +768,7 @@ body {
   color: var(--text-secondary);
 }
 
-/* Index & Footer */
+/* Index y Footer */
 .programs {
   background: var(--bg-secondary);
 }
@@ -950,7 +948,7 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Auth */
+/* Autenticacion */
 .auth-main {
   min-height: calc(100vh - 200px);
   display: flex;
@@ -976,12 +974,12 @@ body {
 }
 
 /* =========================================
-   6. MEDIA QUERIES (ARREGLO DEFINITIVO MÓVIL)
+   6. MEDIA QUERIES (arreglo para moviles)
    ========================================= */
 
 @media (max-width: 768px) {
 
-  /* 1. HEADER (Azul) */
+  /* 1. HEADER */
   .header {
     padding: 15px 0;
   }
@@ -1007,14 +1005,13 @@ body {
     display: none;
   }
 
-  /* 2. NAVBAR (Blanco) - Sticky & Botón */
+  /* 2. NAVBAR */
   .navbar {
     position: sticky;
-    /* Se pega al techo al scrollear */
     top: 0;
     padding: 0;
     height: 60px;
-    /* Altura fija para el navbar */
+    /* altura fija para la navbar */
   }
 
   .nav-content {
@@ -1025,7 +1022,7 @@ body {
     height: 100%;
   }
 
-  /* Botón Hamburguesa - SIEMPRE VISIBLE */
+  /* boton Hamburguesa - SIEMPRE VISIBLE */
   .mobile-toggle {
     display: flex;
     z-index: 2000;
@@ -1035,7 +1032,7 @@ body {
     background: var(--primary);
   }
 
-  /* Panel del menú (Sidebar) */
+  /* panel del menu (sidebar) */
   .nav-menu {
     position: fixed;
     top: 0;
@@ -1047,14 +1044,13 @@ body {
     background: white;
     flex-direction: column;
     padding: 80px 20px 20px;
-    /* Espacio para que no tape el botón de cerrar */
+    /* espacio para que no tape el botón de cerrar */
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
     transform: translateX(100%);
     opacity: 1;
     visibility: visible;
     transition: transform 0.3s ease-in-out;
     z-index: 1500;
-    /* Por encima del navbar */
     overflow-y: auto;
     align-items: stretch;
     gap: 0;
@@ -1064,7 +1060,7 @@ body {
     transform: translateX(0);
   }
 
-  /* Fondo oscuro al abrir menú */
+  /* fondo oscuro al abrir menú */
   .nav-menu.active::before {
     content: "";
     position: fixed;
@@ -1102,7 +1098,7 @@ body {
     padding: 0;
     transition: max-height 0.3s ease;
     width: 100%;
-    /* Fix flickering override desktop styles */
+    /* fix para evitar parpadeo en menu  */
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
@@ -1113,7 +1109,7 @@ body {
     border-bottom: 1px solid #eee;
   }
 
-  /* 3. FORMULARIOS (Scroll horizontal arreglado) */
+  /* 3. FORMULARIOS (evita scroll horizontal arreglado no tocar) */
   .contact-content,
   .preregistro-content {
     display: flex;

@@ -631,3 +631,33 @@ body {
       justify-content: flex-start;
   }
 }
+
+/* =========================================
+   NUEVAS REGLAS PARA BOTONES DE EXPORTACIÓN
+   ========================================= */
+
+/* 1. Estilos Base (Reemplaza el estilo en línea) */
+.export-actions {
+  display: flex;
+  gap: 0.5rem; /* Espacio entre los botones en desktop */
+  align-items: center;
+}
+
+/* 2. Estilos Móviles (Para apilamiento vertical) */
+@media (max-width: 768px) {
+  .export-actions {
+    /* Fuerza a los elementos a apilarse verticalmente */
+    flex-direction: column; 
+    /* Asegura que los botones tomen el ancho completo */
+    align-items: stretch; 
+    width: 100%;
+    /* Aumentamos el espacio vertical entre ellos */
+    gap: 10px; 
+  }
+
+  /* Hace que los botones individuales tomen el 100% del ancho */
+  .export-actions .btn {
+    width: 100%;
+    margin: 0 !important;
+  }
+}

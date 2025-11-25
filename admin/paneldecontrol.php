@@ -179,11 +179,11 @@ $filter_params = http_build_query([
                 <div class="d-flex justify-content-between align-items-center mb-4 mt-4">
                     <h2>Gestión de Inscripciones</h2>
                     <?php if ($user_rol === 'admin'): ?>
-                               <div style="display:flex; gap:0.5rem; align-items:center;">
+                               <div class="export-actions">
                                     <a href="crear_inscripcion.php" class="btn btn-primary">+ Nueva Inscripción</a>
                                     <button type="button" id="btnExportCsv" class="btn btn-outline-success">Exportar Excel</button>
                                     <button type="button" id="btnExportPdf" class="btn btn-outline-danger">Exportar PDF</button>
-                               </div>
+                                </div>
                     <?php endif; ?>
                 </div>
 
