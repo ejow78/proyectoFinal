@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -156,6 +155,7 @@ body::after {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  position: relative;
 }
 
 .form-row {
@@ -167,6 +167,7 @@ body::after {
 .form-group {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .form-group input,
@@ -208,7 +209,7 @@ body::after {
   color: var(--text-primary);
 }
 
-/* Password Input Container */
+/* contenedor del campo contraseña*/
 .password-input-container {
   position: relative;
   display: flex;
@@ -222,6 +223,8 @@ body::after {
 .password-toggle {
   position: absolute;
   right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   color: var(--text-light);
@@ -300,7 +303,7 @@ body::after {
   text-decoration: underline;
 }
 
-/* Responsive Design */
+/* diseño responsive */
 @media (max-width: 768px) {
   .auth-container {
     max-width: 400px;
@@ -372,7 +375,6 @@ body::after {
   }
 }
 
-/* Loading state for buttons */
 .auth-button.loading {
   position: relative;
   color: transparent;
@@ -401,7 +403,6 @@ body::after {
   }
 }
 
-/* Focus states for better accessibility */
 .auth-button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;

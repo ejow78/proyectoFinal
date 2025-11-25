@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile menu toggle
+  // Alternar menú móvil
   const mobileToggle = document.getElementById("mobileToggle")
   const navMenu = document.getElementById("navMenu")
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Close mobile menu when clicking on links
+  // Cerrar menú móvil al hacer clic en enlaces
   const navLinks = document.querySelectorAll(".nav-item:not(.dropdown) .nav-link, .dropdown-link")
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Navbar scroll effect
+ // Efecto de scroll para la barra de navegación
   const navbar = document.getElementById("navbar")
 
   window.addEventListener("scroll", () => {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Carousel functionality
+  // Funcionalidad del carrusel
   const carousel = document.getElementById("carousel")
   if (carousel) {
     const slides = carousel.querySelectorAll(".carousel-slide")
@@ -76,34 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (nextBtn) nextBtn.addEventListener("click", nextSlide)
     if (prevBtn) prevBtn.addEventListener("click", prevSlide)
 
-    // Auto-advance carousel
-    setInterval(nextSlide, 6000) // Updated interval to 6 seconds
+    // Avance automático del carrusel
+    setInterval(nextSlide, 6000) //int a 6seg
   }
 
-  // Contact form handling
-  const contactForm = document.getElementById("contactForm")
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault()
-
-      const submitBtn = this.querySelector(".btn-submit")
-      const originalText = submitBtn.innerHTML
-
-      // Show loading state
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...'
-      submitBtn.disabled = true
-
-      // Simulate form submission
-      setTimeout(() => {
-        showNotification("¡Mensaje enviado exitosamente! Te contactaremos pronto.", "success")
-        contactForm.reset()
-        submitBtn.innerHTML = originalText
-        submitBtn.disabled = false
-      }, 2000)
-    })
-  }
-
-  // Notification system
+  // sistema para las notificaciones
   function showNotification(message, type = "info") {
     const notification = document.createElement("div")
     notification.className = `notification notification-${type}`
@@ -117,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `
 
-    // Styles
+    // estilos notificaciones
     Object.assign(notification.style, {
       position: "fixed",
       top: "20px",
@@ -152,31 +129,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.appendChild(notification)
 
-    // Show notification
+    // muestra la notificación
     setTimeout(() => {
       notification.style.transform = "translateX(0)"
     }, 100)
 
-    // Auto hide
+    // ocultar automáticamente
     setTimeout(() => {
       notification.style.transform = "translateX(100%)"
       setTimeout(() => notification.remove(), 300)
     }, 5000)
 
-    // Close button
+    // boton cerrar
     closeBtn.addEventListener("click", () => {
       notification.style.transform = "translateX(100%)"
       setTimeout(() => notification.remove(), 300)
     })
   }
 
-  // Smooth scrolling for anchor links
+  // scrolling suave para enlaces 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault()
       const target = document.querySelector(this.getAttribute("href"))
       if (target) {
-        const offsetTop = target.offsetTop - 80 // Account for navbar
+        const offsetTop = target.offsetTop - 80
         window.scrollTo({
           top: offsetTop,
           behavior: "smooth",
@@ -185,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Animation on scroll
+  // animaciones al scrollear
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
@@ -200,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }, observerOptions)
 
-  // Observe elements for animation
+  // funcion q observa los elementos para la animacion
   const animatedElements = document.querySelectorAll(".program-card, .stat-item")
   animatedElements.forEach((el) => {
     el.style.opacity = "0"
@@ -210,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Password toggle functionality
+// funcion para mostrar contraseña
 function togglePassword(fieldId) {
   const field = document.getElementById(fieldId)
   const toggle = field.nextElementSibling
@@ -227,198 +204,7 @@ function togglePassword(fieldId) {
   }
 }
 
-// Password strength checker
-function checkPasswordStrength(password) {
-  let strength = 0
-  const feedback = []
-
-  if (password.length >= 8) strength += 1
-  else feedback.push("Al menos 8 caracteres")
-
-  if (/[A-Z]/.test(password)) strength += 1
-  else feedback.push("Una letra mayúscula")
-
-  if (/[a-z]/.test(password)) strength += 1
-  else feedback.push("Una letra minúscula")
-
-  if (/[0-9]/.test(password)) strength += 1
-  else feedback.push("Un número")
-
-  if (/[^A-Za-z0-9]/.test(password)) strength += 1
-  else feedback.push("Un carácter especial")
-
-  return { strength, feedback }
-}
-
-// Update password strength indicator
-function updatePasswordStrength(password) {
-  const strengthBar = document.querySelector(".strength-fill")
-  const strengthText = document.querySelector(".strength-text")
-  const requirements = document.querySelectorAll(".password-requirements li")
-
-  if (!strengthBar) return
-
-  const { strength } = checkPasswordStrength(password)
-  const percentage = (strength / 5) * 100
-
-  strengthBar.style.width = percentage + "%"
-
-  if (strength === 0) {
-    strengthBar.style.background = "#ef4444"
-    strengthText.textContent = "Muy débil"
-  } else if (strength <= 2) {
-    strengthBar.style.background = "#f59e0b"
-    strengthText.textContent = "Débil"
-  } else if (strength <= 3) {
-    strengthBar.style.background = "#eab308"
-    strengthText.textContent = "Regular"
-  } else if (strength <= 4) {
-    strengthBar.style.background = "#22c55e"
-    strengthText.textContent = "Fuerte"
-  } else {
-    strengthBar.style.background = "#10b981"
-    strengthText.textContent = "Muy fuerte"
-  }
-
-  // Update requirements checklist
-  if (requirements.length > 0) {
-    const checks = [
-      password.length >= 8,
-      /[A-Z]/.test(password),
-      /[a-z]/.test(password),
-      /[0-9]/.test(password),
-      /[^A-Za-z0-9]/.test(password),
-    ]
-
-    requirements.forEach((req, index) => {
-      if (checks[index]) {
-        req.classList.add("valid")
-      } else {
-        req.classList.remove("valid")
-      }
-    })
-  }
-}
-
-// Authentication form handlers
-document.addEventListener("DOMContentLoaded", () => {
-  // Login form
-  const loginForm = document.getElementById("loginForm")
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault()
-
-      const submitBtn = this.querySelector(".btn-auth")
-      const originalText = submitBtn.innerHTML
-
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Iniciando sesión...'
-      submitBtn.disabled = true
-
-      setTimeout(() => {
-        showNotification("¡Inicio de sesión exitoso! Redirigiendo...", "success")
-        setTimeout(() => {
-          window.location.href = "index.html"
-        }, 1500)
-      }, 2000)
-    })
-  }
-
-  // Register form
-  const registerForm = document.getElementById("registerForm")
-  if (registerForm) {
-    registerForm.addEventListener("submit", function (e) {
-      e.preventDefault()
-
-      const password = this.querySelector("#password").value
-      const confirmPassword = this.querySelector("#confirmPassword").value
-
-      if (password !== confirmPassword) {
-        showNotification("Las contraseñas no coinciden", "error")
-        return
-      }
-
-      const submitBtn = this.querySelector(".btn-auth")
-      const originalText = submitBtn.innerHTML
-
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creando cuenta...'
-      submitBtn.disabled = true
-
-      setTimeout(() => {
-        showNotification("¡Cuenta creada exitosamente! Revisa tu email para activarla.", "success")
-        setTimeout(() => {
-          window.location.href = "login.html"
-        }, 2000)
-      }, 2000)
-    })
-  }
-
-  // Forgot password form
-  const forgotPasswordForm = document.getElementById("forgotPasswordForm")
-  if (forgotPasswordForm) {
-    forgotPasswordForm.addEventListener("submit", function (e) {
-      e.preventDefault()
-
-      const submitBtn = this.querySelector(".btn-auth")
-      const originalText = submitBtn.innerHTML
-
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...'
-      submitBtn.disabled = true
-
-      setTimeout(() => {
-        showNotification("¡Instrucciones enviadas! Revisa tu email.", "success")
-        submitBtn.innerHTML = originalText
-        submitBtn.disabled = false
-        this.reset()
-      }, 2000)
-    })
-  }
-
-  // Reset password form
-  const resetPasswordForm = document.getElementById("resetPasswordForm")
-  if (resetPasswordForm) {
-    const newPasswordField = document.getElementById("newPassword")
-    const confirmPasswordField = document.getElementById("confirmNewPassword")
-
-    if (newPasswordField) {
-      newPasswordField.addEventListener("input", function () {
-        updatePasswordStrength(this.value)
-      })
-    }
-
-    resetPasswordForm.addEventListener("submit", function (e) {
-      e.preventDefault()
-
-      const newPassword = newPasswordField.value
-      const confirmPassword = confirmPasswordField.value
-
-      if (newPassword !== confirmPassword) {
-        showNotification("Las contraseñas no coinciden", "error")
-        return
-      }
-
-      const { strength } = checkPasswordStrength(newPassword)
-      if (strength < 3) {
-        showNotification("La contraseña debe ser más segura", "error")
-        return
-      }
-
-      const submitBtn = this.querySelector(".btn-auth")
-      const originalText = submitBtn.innerHTML
-
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Cambiando contraseña...'
-      submitBtn.disabled = true
-
-      setTimeout(() => {
-        showNotification("¡Contraseña cambiada exitosamente!", "success")
-        setTimeout(() => {
-          window.location.href = "login.html"
-        }, 1500)
-      }, 2000)
-    })
-  }
-})
-
-// Enhanced notification system for auth
+// notificaciones para auth
 function showNotification(message, type = "info") {
   const notification = document.createElement("div")
   notification.className = `notification notification-${type}`
@@ -485,7 +271,7 @@ function showNotification(message, type = "info") {
   })
 }
 
-// Función para toggle del curriculum (para páginas de carreras) - Versión flexible
+// Función para toggle de plan de estudio
 function toggleCurriculum(yearId) {
   const content = document.getElementById(yearId)
   const button = content.previousElementSibling

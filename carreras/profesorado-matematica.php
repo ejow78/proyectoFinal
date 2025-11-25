@@ -37,7 +37,7 @@
                         </p>
                     </div>
                     <div class="career-hero-image">
-                        <img src="<?php echo IMG_URL; ?>how-to-choose-your-programming-language-for-your-software.jpg" alt="Profesor de Matemáticas en clase" class="hero-illustration">
+                        <img src="<?php echo IMG_URL; ?>matematica.webp" alt="Profesor de Matemáticas en clase" class="hero-illustration">
                     </div>
                 </div>
             </div>

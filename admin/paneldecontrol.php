@@ -61,7 +61,7 @@ $total_items_insc = $stmt_insc_count->get_result()->fetch_assoc()['total'];
 $total_pages_insc = ceil($total_items_insc / $per_page_insc);
 $stmt_insc_count->close();
 
-// Obtener Inscripciones (Paginadas)
+// paginacion inscripciones
 $sql_insc = "SELECT * FROM preinscripciones WHERE $where_sql ORDER BY creadoa DESC LIMIT ? OFFSET ?";
 $params_with_pagination = $params;
 $params_with_pagination[] = $per_page_insc;
@@ -74,19 +74,19 @@ if (!empty($params_with_pagination)) {
 }
 $stmt_insc->execute();
 $result_insc = $stmt_insc->get_result();
-$stmt_insc->close(); // Cerramos el statement de inscripciones
+$stmt_insc->close(); // statement inscripciones 
 
 
-// 4. LÓGICA DE MENSAJES (Paginación)
+// 4. paginacion mensajes
 $per_page_msg = 10;
 $offset_msg = ($page_msg - 1) * $per_page_msg;
 
-// Conteo de Mensajes
+// conteo de Mensajes
 $count_sql_msg = "SELECT COUNT(*) as total FROM mensajes_contacto";
 $total_items_msg = $conn->query($count_sql_msg)->fetch_assoc()['total'];
 $total_pages_msg = ceil($total_items_msg / $per_page_msg);
 
-// Obtener Mensajes (Paginados)
+// obtener mensajes paginados
 $sql_mensajes = "SELECT * FROM mensajes_contacto ORDER BY creadoa DESC LIMIT ? OFFSET ?";
 $stmt_msg = $conn->prepare($sql_mensajes);
 $stmt_msg->bind_param("ii", $per_page_msg, $offset_msg);
@@ -294,7 +294,7 @@ $filter_params = http_build_query([
                             <thead>
                                 <tr>
                                     <th>ID</th><th>Nombre Completo</th><th>Email</th><th>Teléfono</th>
-                                    <th>Interés</th><th>Fecha</th><th>Mensaje</th><th>Acciones</th>
+                                    <th>Interés</th><th>Mensaje</th><th>Fecha</th><th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -306,11 +306,11 @@ $filter_params = http_build_query([
                                             <td style="text-transform: lowercase;"><?php echo htmlspecialchars($row['email']); ?></td>
                                             <td><?php echo htmlspecialchars($row['telefono']); ?></td>
                                             <td><?php echo htmlspecialchars($carreras_nombres[$row['interes']] ?? $row['interes']); ?></td>
-                                            <td><?php echo date('d/m/Y H:i', strtotime($row['creadoa'])); ?></td>
                                             <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" 
                                                 title="<?php echo htmlspecialchars($row['mensaje']); ?>">
                                                 <?php echo htmlspecialchars($row['mensaje']); ?>
                                             </td>
+                                            <td><?php echo date('d/m/Y H:i', strtotime($row['creadoa'])); ?></td>
                                             <td style="white-space: nowrap;">
                                                 <button onclick="confirmarEliminarMsg(<?php echo $row['id']; ?>, '<?php echo htmlspecialchars(addslashes($row['nombre'] . ' ' . $row['apellido'])); ?>')" 
                                                              class="btn btn-danger btn-sm">Eliminar</button>

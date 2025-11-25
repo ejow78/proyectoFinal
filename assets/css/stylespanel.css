@@ -306,14 +306,27 @@ body {
 
 .table td:nth-child(3),
 .table th:nth-child(3) {
-  width: 90px;
-  max-width: 90px;
+  width: 150px;
+  max-width: 250px;
+  text-transform: none !important;
 }
 
 .table td:nth-child(4),
 .table th:nth-child(4) {
-  width: 90px;
-  max-width: 90px;
+  width: 120px;
+  max-width: 120px;
+}
+
+.table td:nth-child(5) {
+  text-transform: none !important; 
+}
+
+.table td:nth-child(6) { 
+    max-width: 400px !important; 
+    white-space: normal !important; 
+    text-transform: none !important;
+    overflow: visible !important; 
+    text-overflow: clip !important;
 }
 
 .table td:nth-child(8),
@@ -330,11 +343,14 @@ body {
 }
 
 .table td:nth-child(7) {
-  text-transform: lowercase !important;
-  max-width: 180px;
+  max-width: 400px !important; 
+  white-space: normal !important; 
+  text-transform: none !important; 
+  overflow: visible !important; 
+  text-overflow: clip !important;
 }
 
-/* Modificación para que siempre agarre la última columna (Acciones) */
+
 .table td:last-child,
 .table th:last-child {
   position: sticky;
@@ -342,13 +358,12 @@ body {
   background: white;
   white-space: nowrap;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
-  min-width: 180px;  /* Ancho mínimo para que quepan los 2 botones */
+  min-width: 180px; 
   z-index: 10;
-  overflow: visible !important; /* Importante: quita los ... */
-  text-overflow: clip !important; /* Importante: evita el recorte de texto */
+  overflow: visible !important; 
+  text-overflow: clip !important; 
 }
 
-/* Aseguramos que el encabezado también tenga el fondo correcto */
 .table th:last-child {
   background-color: #f8f9fa;
 }
@@ -519,7 +534,6 @@ body {
    =================================== */
 
 @media (max-width: 768px) {
-  /* Convertido grid-template-columns a 100% */
   .form-row {
     grid-template-columns: 100%;
   }
@@ -557,7 +571,6 @@ body {
 }
 /* ===================================
    STICKY FOOTER HELPER
-   (Hace que el contenido principal crezca)
    =================================== */
 .container.mt-4 {
   flex-grow: 1;
@@ -565,10 +578,9 @@ body {
 
 /* ===================================
    MEJORA DE ESTILOS PARA TABS
-   (Personaliza las pestañas de Bootstrap)
    =================================== */
 .nav-tabs {
-  border-bottom: 1px solid #dee2e6; /* Línea gris más sutil */
+  border-bottom: 1px solid #dee2e6; 
   margin-bottom: 24px;
 }
 
@@ -593,29 +605,26 @@ body {
 }
 
 /* =========================================
-   CORRECCIÓN PARA MÓVILES (Table responsive)
+   CORRECCIÓN PARA MÓVILES 
    ========================================= */
 @media (max-width: 768px) {
-  /* Hacemos que la columna de acciones deje de flotar encima */
   .table td:last-child,
   .table th:last-child {
-    position: static !important; /* Quita el 'sticky' */
-    box-shadow: none !important; /* Quita la sombra */
+    position: static !important;
+    box-shadow: none !important; 
     background: transparent !important;
     min-width: auto !important; /* Deja que tome el ancho natural */
     width: auto !important;
     border-left: none;
   }
 
-  /* Aseguramos que el contenedor permita deslizar (scroll) horizontalmente */
   .table-responsive {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Deslizamiento suave en iPhone */
+    -webkit-overflow-scrolling: touch; 
   }
   
-  /* Ajuste opcional para que los botones no queden gigantes en móvil */
   .table td:last-child {
       display: flex;
       gap: 5px;

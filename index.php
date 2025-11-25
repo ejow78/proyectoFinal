@@ -22,17 +22,17 @@
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="<?php echo IMG_URL; ?>MathClass_0033_hero.jpg" alt="Estudiantes">
+                <img src="<?php echo IMG_URL; ?>pexels.jpg" alt="Estudiantes">
                 <div class="carousel-content">
-                    <h2>Formando el Futuro</h2>
-                    <p>lorem ipsum</p>
+                    <h2>Formando el futuro</h2>
+                    <p>Impulsando mentes, creando oportunidades.</p>
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="<?php echo IMG_URL; ?>Agro1-1100x733-1.jpg" alt="Graduación">
+                <img src="<?php echo IMG_URL; ?>lacocha.jpg" alt="Graduación">
                 <div class="carousel-content">
-                    <h2>Tu Futuro Comienza Aquí</h2>
-                    <p>lorem ipsum</p>
+                    <h2>Tu futuro comienza acá</h2>
+                    <p>Activá tu potencial. Aprendé, crecé, inspirá.</p>
                 </div>
             </div>
             <button class="carousel-btn prev" id="prevBtn">
@@ -96,7 +96,7 @@
                         </p>
                     </div>
                     <div class="about-image">
-                        <img src="<?php echo IMG_URL; ?>carrusel2.png" alt="Instituto La Cocha">
+                        <img src="<?php echo IMG_URL; ?>sobrenosotros.png" alt="Instituto La Cocha">
                     </div>
                 </div>
             </div>

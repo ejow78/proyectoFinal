@@ -37,7 +37,7 @@
                         </p>
                     </div>
                     <div class="career-hero-image">
-                        <img src="<?php echo IMG_URL; ?>how-to-choose-your-programming-language-for-your-software.jpg" alt="Desarrollador de Software trabajando" class="hero-illustration">
+                        <img src="<?php echo IMG_URL; ?>software.jpg" alt="Desarrollador de Software trabajando" class="hero-illustration">
                     </div>
                 </div>
             </div>
