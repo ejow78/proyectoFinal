@@ -17,7 +17,7 @@ Este proyecto forma parte de la materia Laboratorio de Programación. Su objetiv
 - Bootstrap 5: para diseño responsive y componentes modernos.
 - JavaScript: para validar formularios y agregar interactividad básica.
   
-## Tecnologías Frontend
+## Tecnologías Backend
 
 - PHP: Como lenguaje principal del lado del servidor.
 - MySQL: Como sistema de gestión de base de datos (a través de mysqli).
@@ -30,6 +30,7 @@ proyectoFinal/
 │   ├── paneldecontrol.php      # (Ver, filtrar y buscar mensajes e inscripciones)
 │   ├── crear_inscripcion.php   # (Formulario para crear inscripciones)
 │   ├── editar_inscripcion.php  # (Formulario para editar inscripciones)
+│   ├── inscripciones_json.php  # (Lógica de exportacion de tabla de inscripciones)
 │   └── eliminar_inscripcion.php # (Lógica para eliminar entries)  
 ├── assets/
 │   ├── css/                    # (styles.css, stylespanel.css, styles-auth.)
